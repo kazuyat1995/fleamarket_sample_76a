@@ -1,4 +1,4 @@
-<img width="1221" alt="112fd7e7691250ff916aa9b5ad53a75f" src="https://user-images.githubusercontent.com/66734345/89298281-142fa680-d6a0-11ea-96e0-0301604da1af.png">
+<img width="968" alt="ER図ver2" src="https://user-images.githubusercontent.com/66734345/89299521-b9974a00-d6a1-11ea-9692-3d85cc2014aa.png">
 
 ## users
 |Column|Type|Options|
