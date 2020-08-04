@@ -8,8 +8,9 @@
 - has_one :profile
 - has_one :adress
 - has_many :credit_cards
-- has_many :products
+- has_many :items
 - has_many :comments
+
 
 ## profiles
 |Column|Type|Options|
@@ -24,15 +25,16 @@
 ### Association
 - belongs_to :user
 
+
 ## credit_cards
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null:false|
-|card_id|string|null:false|
+|card_code|string|null:false|
 |security_id|string|null:false|
 |exp|date|null:false|
 ### Association
 - belongs_to: user
+
 
 ## adress
 |Column|Type|Options|
@@ -46,16 +48,17 @@
 ### Association
 - belongs_to: user
 
-## products
+
+## items
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
 |detail|text|null:false|
 |price|integer|null:false|
 |condition|string|null:false|
-|category|references|null:false,foreign_key:true|
-|brand|references|null:false,foreign_key:true|
 |postage|integer|null:false|
+|category_id|references|null:false,foreign_key:true|
+|brand_id|references|null:false,foreign_key:true|
 ### Association
 - has_many :images
 - has_many :comments
@@ -68,19 +71,20 @@
 |Column|Type|Options|
 |------|----|-------|
 |img|string|null:false|
-|products_id|references|null:false,foreign_key:true|
+|item_id|references|null:false,foreign_key:true|
 ### Association
 - belongs_to :products
+
 
 ## comments
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null:false|
 |user_id|references|null:false,foreign_key:true|
-|product_id|references|null:false,foreign_key:true|
+|item_id|references|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
 
 ## categories
 |Column|Type|Options|
