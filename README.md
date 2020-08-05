@@ -1,4 +1,4 @@
-<img width="968" alt="ER図ver2" src="https://user-images.githubusercontent.com/66734345/89299521-b9974a00-d6a1-11ea-9692-3d85cc2014aa.png">
+<img width="1525" alt="ER図" src="https://user-images.githubusercontent.com/66734345/89371944-bfcc0b80-d71f-11ea-9810-c460367d4362.png">
 
 ## users
 |Column|Type|Options|
@@ -8,7 +8,7 @@
 |email|string|null:false, unique:true|
 ### Association
 - has_one :profile
-- has_one :adress
+- has_one :address
 - has_many :credit_cards
 - has_many :items
 - has_many :comments
@@ -39,7 +39,7 @@ user_id|references|null:false,foreign_key:true|
 - belongs_to: user
 
 
-## adress
+## address
 |Column|Type|Options|
 |------|----|-------|
 |post_code|integer|null:false|
