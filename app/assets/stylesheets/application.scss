@@ -1,6 +1,8 @@
 @import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "items";
 @import "modules/index";
-// @import "modules/overview";
-// @import "modules/mypage";
-// @import "modules/detail";
-// @import "modules/exhibit";
+@import "modules/exhibit";
+@import "modules/detail";
+@import "modules/show";
