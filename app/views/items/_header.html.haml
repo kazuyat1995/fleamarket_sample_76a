@@ -1,0 +1,29 @@
+.header
+  .header__Inner
+    .header__Inner__top
+      .icon
+        %a{:href => "/"}
+          %img{:src => "/assets/logo.png"}/
+      .searchBox
+        %form.form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+          %input#keyword.searchBox-input{:name => "keyword", :placeholder => "キーワードから探す", :type => "text"}/
+          %button.search-btn{:name => "button", :type => "submit"}
+            =icon("fas", "search")
+    .header__Inner__bottom
+      %ul.left-items
+        %li.left-item1
+          %a.category-btn{:href => "#"} 
+            = icon("fas", "list")
+            カテゴリー
+        %li.left-item2
+          %a.brand-btn{:href => "#"} 
+            = icon("fas", "tags")
+            ブランド
+      %ul.right-items
+        %li.right-item3
+          %a.new-btn{:href => "#"}
+            ログイン
+        %li.right-item4
+          %a.login-btn{:href => "#"}
+            新規会員登録
