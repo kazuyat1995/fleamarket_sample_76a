@@ -2,7 +2,7 @@
   .header__Inner
     .header__Inner__top
       .icon
-        %a{:href => "/"}
+        =link_to "/" do
           %img{:src => "/assets/logo.png"}/
       .searchBox
         %form.form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
@@ -13,17 +13,17 @@
     .header__Inner__bottom
       %ul.left-items
         %li.left-item1
-          %a.category-btn{:href => "#"} 
+          = link_to '#', class: 'category-btn' do
             = icon("fas", "list")
             カテゴリー
         %li.left-item2
-          %a.brand-btn{:href => "#"} 
+          = link_to '#', class: 'brand-btn' do
             = icon("fas", "tags")
             ブランド
       %ul.right-items
         %li.right-item3
-          %a.new-btn{:href => "#"}
+          = link_to '#', class: 'new-btn' do
             ログイン
         %li.right-item4
-          %a.login-btn{:href => "#"}
+          = link_to '#', class: 'login-btn' do
             新規会員登録

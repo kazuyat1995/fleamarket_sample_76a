@@ -335,7 +335,6 @@
         }
       }
       .productLists{
-        // overflow: scroll;
         width: 780px;
         margin: 26px auto;
         display: flex;
@@ -405,7 +404,6 @@
     background-color: white;
     padding: 80px 0 0;
     height: 100%;
-    // padding-bottom: 80px;
     .head{
       text-align: center;
       font-size: 28px;
@@ -429,7 +427,6 @@
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
-        // overflow: scroll;
         .productList{
           width: 220px;
           padding-right: 10px;
@@ -478,7 +475,6 @@
                     display: inline-block;
                     font-style: normal;
                     font-variant: normal;
-                    // font-size: inherit;
                     text-rendering: auto;
                     line-height: 1;
                   }
@@ -535,7 +531,6 @@
   background-color: rgb(34, 34, 34);
   color: white;
   padding: 40px 0;
-  // position: fixed;
   bottom: 0;
   width: 100%;
   &__Inners{
