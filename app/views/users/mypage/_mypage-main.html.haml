@@ -1,19 +1,106 @@
 .mypage__main
-  .mypage__user__icon
-    名前
-  .mypage__main__header__score
-    評価
-    %li.mypage__main__header__items
-      出品数
-  .user-info
-    .user-info__left 
-      お知らせ
-    .user-info__right
-      やることリスト
-  .user-deal
-    .user-deal__header
-    %p 購入した商品
-    .user-deal__left
-      取引中
-    .user-deal__right
-      過去の取引
+  .mypage__main__info
+    .mypage__main__info__container
+      = link_to "#", class:"container-link" do
+        %figure#user-icon
+          = image_tag "member_photo_noimage_thumb", size: "60x60", alt: "アイコン"
+        %h2.user-nickname
+          ニックネーム
+        .mypage-number
+          .mypage-number__table
+            評価
+            %span.mypage-number__table__score
+              0
+          .mypage-number__table-left
+            出品数
+            %span.mypage-number__table__score
+              0
+    .mypage__main__info__tab
+      %ul.mypage-tabs
+        %li.mypage-tabs__body.mypage-tabs__body-active
+          %h3.mypage-tabs__body__name
+            お知らせ
+        %li.mypage-tabs__body.mypage-tabs__body-non-active
+          %h3.mypage-tabs__body__name
+            やることリスト
+      .mypage-tab__content
+        %ul.mypage-tab__content__notification
+          %li.mypage-tab__content__notification-list
+            .notification-link
+              = link_to "#" do
+                %figure#furima-logo2
+                  = image_tag "logo2", size: "48x48", alt: "ロゴ2"
+              .notification-link__body
+                .notification-link__body__text
+                  《本日23:59まで》お買い物に使える♪2,000円分のポイントをプレゼント！
+                .notification-link__body__time
+                  = icon("far", "clock")
+                  %span.notification-time
+                    3時間前
+          %li.mypage-tab__content__notification-list
+            .notification-link
+              = link_to "#" do
+                %figure#furima-logo2
+                  = image_tag "logo2", size: "48x48", alt: "ロゴ2"
+              .notification-link__body
+                .notification-link__body__text
+                  最大P500が毎日当たるチャンス！夏の24時間即売れチャレンジスタート！
+                .notification-link__body__time
+                  = icon("far", "clock")
+                  %span.notification-time
+                    8時間前
+          %li.mypage-tab__content__notification-list
+            .notification-link
+              = link_to "#" do
+                %figure#furima-logo2
+                  = image_tag "logo2", size: "48x48", alt: "ロゴ2"
+              .notification-link__body
+                .notification-link__body__text
+                  簡単操作で”必ず”P300もらえる
+                .notification-link__body__time
+                  = icon("far", "clock")
+                  %span.notification-time
+                    1日前
+          %li.mypage-tab__content__notification-list
+            .notification-link
+              = link_to "#" do
+                %figure#furima-logo2
+                  = image_tag "logo2", size: "48x48", alt: "ロゴ2"
+              .notification-link__body
+                .notification-link__body__text
+                  フリマのお買い物がおトク！フリマポイント申込み受付中
+                .notification-link__body__time
+                  = icon("far", "clock")
+                  %span.notification-time
+                    2日前
+          %li.mypage-tab__content__notification-list
+            .notification-link
+              = link_to "#" do
+                %figure#furima-logo2
+                  = image_tag "logo2", size: "48x48", alt: "ロゴ2"
+              .notification-link__body
+                .notification-link__body__text
+                  購入も出品もしなくてOK！連携するだけでポイントもらえる！
+                .notification-link__body__time
+                  = icon("far", "clock")
+                  %span.notification-time
+                    3日前
+          %li.mypage-tab__notification-all
+            = link_to "#", class: "mypage-tab__notification-all__link" do
+              一覧を見る
+  .mypage__main__info__container-under
+    %h2.mypage__main__info__container-under__name
+      購入した商品
+    .mypage__main__info__tab.mypage__main__info__tab-under
+      %ul.mypage-tabs
+        %li.mypage-tabs__body.mypage-tabs__body-active
+          %h3.mypage-tabs__body__name
+            取引中
+        %li.mypage-tabs__body.mypage-tabs__body-non-active
+          %h3.mypage-tabs__body__name
+            過去の取引
+    .mypage__main__info__container-under__content
+      %p.mypage__main__info__container-under__content__text
+        取引中の商品はありません
+
+
