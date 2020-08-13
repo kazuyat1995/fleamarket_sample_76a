@@ -1,3 +1,5 @@
+<img width="1525" alt="ER図" src="https://user-images.githubusercontent.com/66734345/89371944-bfcc0b80-d71f-11ea-9810-c460367d4362.png">
+
 ## users
 |Column|Type|Options|
 |------|----|-------|
@@ -6,10 +8,11 @@
 |email|string|null:false, unique:true|
 ### Association
 - has_one :profile
-- has_one :adress
+- has_one :address
 - has_many :credit_cards
-- has_many :products
+- has_many :items
 - has_many :comments
+
 
 ## profiles
 |Column|Type|Options|
@@ -24,17 +27,19 @@
 ### Association
 - belongs_to :user
 
+
 ## credit_cards
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null:false|
-|card_id|string|null:false|
+|card_code|integer|null:false|
 |security_id|string|null:false|
 |exp|date|null:false|
+user_id|references|null:false,foreign_key:true|
 ### Association
 - belongs_to: user
 
-## adress
+
+## address
 |Column|Type|Options|
 |------|----|-------|
 |post_code|integer|null:false|
@@ -46,7 +51,8 @@
 ### Association
 - belongs_to: user
 
-## products
+
+## items
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
@@ -60,8 +66,8 @@
 - has_many :images
 - has_many :comments
 - belongs_to :user
-- belongs_to :category, through: :brand_categories
-- belongs_to :brand, through: :brand_categories
+- belongs_to :category
+- belongs_to :brand
 
 
 ## images
@@ -70,7 +76,8 @@
 |img|string|null:false|
 |products_id|references|null:false,foreign_key:true|
 ### Association
-- belongs_to :products
+- belongs_to :item
+
 
 ## comments
 |Column|Type|Options|
@@ -80,16 +87,16 @@
 |product_id|references|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
+
 
 ## categories
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
+|ancestry|string||
 ### Association
 - has_many :items
-- has_many :brand_categories
-- has_many :brand, through: :brand_categories
 
 
 ## brands
@@ -98,16 +105,3 @@
 |name|string|null:false|
 ### Association
 - has_many :items
-- has_many :brand_categories
-- has_many :category, through: :brand_categories
-
-
-## brand_categories
-|column|Type|Option|
-|------|----|------|
-|category_id|references|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :category
-- belongs_to :brand
-

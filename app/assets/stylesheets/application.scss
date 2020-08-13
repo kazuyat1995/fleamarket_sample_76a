@@ -1,14 +1,10 @@
 @import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "items";
 @import "modules/index";
+@import "modules/exhibit";
+@import "modules/detail";
 @import "modules/users/mypage";
 @import "modules/users/user-edit";
 @import "modules/credit_cards_new";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
-
-// @import "modules/overview";
-// @import "modules/mypage";
-// @import "modules/detail";
-// @import "modules/exhibit";
