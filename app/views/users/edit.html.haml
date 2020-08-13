@@ -3,6 +3,6 @@
   = render "users/mypage/mypage-side"
   .user-cog__right
     .user-cog__right__logout
-      = link_to "#", class: "user-cog__right__logout__btn" do
+      = link_to "destroy_user_session_path", class: "user-cog__right__logout__btn" do
         ログアウト
 = render 'items/footer'
