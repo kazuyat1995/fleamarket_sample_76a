@@ -254,7 +254,7 @@
   = render 'items/footer'
 
 .sell
-  %a.sell-icon{:href => "#"}
+  = link_to "#", class: "sell-icon" do
     .photoBtn
       %span.photoBtn__text
         出品する
