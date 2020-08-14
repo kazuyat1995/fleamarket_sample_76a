@@ -21,24 +21,23 @@
   &__head-cog {
     margin-top: 40px;
   }
-}
 
+  &__menu {
 
-.user-navi__menu {
+    &__list {
+      border-bottom: 1px solid #333;
 
-  &__list {
-    border-bottom: 1px solid #333;
-
-    &__item {
-      height: 50px;
-      line-height: 50px;
-      font-size: 16px;
-      color: #4e5863;
+      &__item {
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        color: #4e5863;
+      }
     }
-  }
 
-  &__list:hover {
-    background-color: #f0f0f0;
+    &__list:hover {
+      background-color: #f0f0f0;
+    }
   }
 }
 

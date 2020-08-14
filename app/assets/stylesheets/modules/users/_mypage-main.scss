@@ -56,18 +56,18 @@
 .notification-link {
   display: flex;
   border-bottom: 1px solid #333;
-}
 
-.notification-link__body {
-  color: #4e5863;
+  &__body {
+    color: #4e5863;
 
-  &__text {
-    line-height: 50px;
-    font-size: 16px;
-  }
+    &__text {
+      line-height: 50px;
+      font-size: 16px;
+    }
 
-  &__time {
-    font-size: 14px;
+    &__time {
+      font-size: 14px;
+    }
   }
 }
 

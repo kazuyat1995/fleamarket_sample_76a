@@ -4,7 +4,7 @@
     クレジットカード入力画面
 .main-form
   .main-form__frame
-    = form_tag(credit_cards_new_path, method: :post, id: 'charge-form',  name: "inputForm") do
+    = form_tag(new_credit_card_path, method: :post, id: 'charge-form',  name: "inputForm") do
       .form-group
         %label カード番号
         %span.form-group__require 必須
