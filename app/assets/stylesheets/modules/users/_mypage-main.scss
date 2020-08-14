@@ -1,0 +1,104 @@
+.mypage__main {
+  float: right;
+  width: 700px;
+
+  &__info {
+    &__container {
+      width: 700px;
+      display: inline-block;
+      text-align: center;
+      background: url(icon-background.jpg);
+    }
+  }
+}
+
+.container-link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.user-nickname {
+  font-weight: bold;
+}
+
+.mypage-number {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  padding-bottom: 5px;
+
+  &__table-left {
+    margin-left: 16px;
+  }
+}
+
+.mypage-tabs {
+  display: flex;
+
+  &__body {
+    width: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 72px;
+  }
+
+  &__body-active {
+    border-top: 2px solid #3ccace;
+  }
+
+  &__body-non-active {
+    background-color: #f0f0f0;
+  }
+}
+
+.notification-link {
+  display: flex;
+  border-bottom: 1px solid #333;
+
+  &__body {
+    color: #4e5863;
+
+    &__text {
+      line-height: 50px;
+      font-size: 16px;
+    }
+
+    &__time {
+      font-size: 14px;
+    }
+  }
+}
+
+.mypage-tab__notification-all {
+  height: 56px;
+  background-color: #f0f0f0;
+  text-align: center;
+  line-height: 56px;
+
+  &__link {
+    color: #4e5863;
+    text-decoration: none;
+  }
+}
+
+.mypage__main__info__container-under {
+  margin-top: 40px;
+
+  &__name {
+    margin-left: 10px;
+    line-height: 50px;
+    font-weight: bold;
+  }
+
+  &__content {
+    height: 236px;
+
+    &__text {
+      color: #ccc;
+      text-align: center;
+      line-height: 236px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.mypage {
+  height: 100%;
+  width: 1020px;
+  margin: 40px auto 0;
+  overflow: scroll;
+}
+
+@import "modules/users/mypage-side";
+@import "modules/users/mypage-main";
