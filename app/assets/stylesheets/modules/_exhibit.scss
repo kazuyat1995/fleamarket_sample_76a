@@ -1,0 +1,221 @@
+// tytle・required-mark・select-boxは供用
+.tytle {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.required-mark {
+  background: red;
+  height: 20px;
+  width: 50px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 20px;
+  margin: 5px 0 0 15px;
+}
+
+.select-box {
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+// view
+.exhibit-main {
+  background-color: #f8f8f8;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &__container {
+    background-color: white;
+    height: 1550px;
+    width: 700px;
+    padding: 14px 40px 40px;
+    // 出品画像
+    .exhibit-image {
+      &__header {
+        margin-top: 10px;
+        display: flex;
+      }
+      &__content {
+        height: 160px;
+        border-bottom: 1px solid #999999;
+        &--explanation {
+          font-size: 12px;
+          margin: 10px;
+        }
+        &--reference-box {
+          background-color: #3CCACE;
+          height: 120px;
+          width: 100%;
+          border-radius: 30px;
+          font-size: 12px;
+          text-align: center;
+          line-height: 120px;
+        }
+        .box-link {
+          display: none;
+        }
+      }
+    }
+    // 商品名
+    .exhibit-name {
+      &__header {
+        margin: 10px 0 5px 0;
+        display: flex;
+      }
+      &__content {
+        height: 50px;
+        width: 100%;
+        padding-left: 10px;
+      }
+    }
+    // 商品詳細
+    .exhibit-detail {
+      &__header {
+        margin: 10px 0 5px 0;
+        display: flex;
+      }
+      &__text-box {
+        height: 150px;
+        width: 100%;
+        padding-left: 10px;
+        overflow-y: scroll;
+      }
+    }
+    // カテゴリー
+    .exhibit-category{
+      &__header {
+        margin: 10px 0 5px 0;
+        display: flex;
+      }
+    }
+    // ブランド
+    .exhibit-brand{
+      &__header {
+        margin: 10px 0 5px 0;
+      }
+      &__content {
+        height: 50px;
+        width: 100%;
+        padding-left: 10px;
+      }
+    }
+    // 商品の状態
+    .exhibit-condition{
+      padding-bottom: 20px;
+      border-bottom: 1px solid #999999;
+      &__header {
+        margin: 10px 0 5px 0;
+        display: flex;
+      }
+    }
+    // 配送料の負担
+    .exhibit-postage{
+      &__header {
+        margin: 10px 0 5px 0;
+        display: flex;
+      }
+    }
+    // 配送元の地域
+    .exhibit-address{
+      &__header {
+        margin: 10px 0 5px 0;
+        display: flex;
+      }
+    }
+    // 配送までの日数
+    .exhibit-shipping{
+      &__header {
+        margin: 10px 0 5px 0;
+        display: flex;
+      }
+    }
+    // 販売価格
+    .exhibit-price{
+      border-bottom: 1px solid #999999;
+      &__header {
+        margin: 10px 0 5px 0;
+        display: flex;
+      }
+      &__input-box {
+        margin-bottom: 10px;
+        display: flex;
+        .price-unit {
+          font-size: 20px;
+          font-weight: bolder;
+          line-height: 50px;
+        }
+        .price-content {
+          width: 100%;
+          margin-left: 10px;
+          &__field {
+            height: 50px;
+            width: 100%;
+            padding-left: 10px;
+          }
+        }
+      }
+      &__fee {
+        position: relative;
+        display: flex;
+        &--left-text {
+          margin-left: 25px;
+        }
+        &--right-content {
+          position: absolute;
+          left: 280px;
+          display: flex;
+          .unit {
+            margin-right: 10px;
+          }
+        }
+      }
+      &__profit {
+        position: relative;
+        padding-bottom: 10px;
+        display: flex;
+        &--left-text {
+          margin-left: 25px;
+        }
+        &--right-content {
+          position: absolute;
+          left: 280px;
+          display: flex;
+          .unit {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    // 出品する
+    .exhibit-box {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding-top: 10px;
+      border-bottom: 1px solid #999999;
+      &__btn {
+        background: #3CCACE;
+        border: 1px solid #3CCACE;
+        height: 50px;
+        width: 60%;
+        color: white;
+        font-size: 18px;
+        border-radius: 30px;
+        text-align: center;
+        line-height: 50px;
+        text-decoration: none;
+      }
+    }
+    .attention-text {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+  }
+}
