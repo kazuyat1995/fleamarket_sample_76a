@@ -1,0 +1,8 @@
+= render 'items/header'
+.user-cog
+  = render "users/mypage/mypage-side"
+  .user-cog__right
+    .user-cog__right__logout
+      = link_to "destroy_user_session_path", class: "user-cog__right__logout__btn" do
+        ログアウト
+= render 'items/footer'

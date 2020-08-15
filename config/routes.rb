@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     post 'address', to: 'users/registrations#create_address'
   end
   root to: 'items#index'
+  resources :items, only: [:new, :show]
+  resources :users, only: [:index, :edit]
+  resources :credit_cards, only: [:new]
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

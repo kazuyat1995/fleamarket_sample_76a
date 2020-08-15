@@ -1,0 +1,35 @@
+.user-cog {
+  height: 100%;
+  width: 1020px;
+  margin: 40px auto 0;
+  overflow: scroll;
+  
+  &__right {
+    float: right;
+    background-color: whitesmoke;
+    width: 700px;
+    height: 200px;
+    position: relative;
+
+    &__logout {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+
+      &__btn {
+        display: block;
+        background-color: turquoise;
+        color: white;
+        font-size: 20px;
+        width: 280px;
+        height: 60px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 60px;
+        border:1px solid turquoise;
+        border-radius: 4px;
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+= render partial: 'header'
+
+.detail-main
+  .detail-main__container
+    .detail-main__container--product-box
+      %h2.product-name
+        product
+      %ul.product-image
+        %li.product-image__top
+          = image_tag "img01.png", class: 'img'
+        %li.product-image__bottom
+          %ul.bottom-image
+            %li.bottom-image__left
+              = image_tag "img01.png", class: 'img'
+            %li.bottom-image__center
+              = image_tag "img02.png", class: 'img'
+            %li.bottom-image__right
+              = image_tag "img03.png", class: 'img'
+      .price-box
+        %p.price-box__item-price
+          ￥30000
+        .price-box__item-fee
+          %p.price-box__item-tax
+            (税込)
+          %p.price-box__item-postage
+            送料込み
+      .item-detail
+        %p
+          <商品の状態について>
+        %p
+          写真はイメージです。
+      .item-property
+        .item-property__column1
+          出品者
+        .item-property__column2
+          hoge
+      .item-property
+        .item-property__column1
+          カテゴリー
+        .item-property__column2
+          メンズ
+      .item-property
+        .item-property__column1
+          ブランド
+        .item-property__column2
+          不明
+      .item-property
+        .item-property__column1
+          商品サイズ
+        .item-property__column2
+          不明
+      .item-property
+        .item-property__column1
+          商品の状態
+        .item-property__column2
+          未使用に近い
+      .item-property
+        .item-property__column1
+          配送料の負担
+        .item-property__column2
+          送料込み(出品者の負担)
+      .item-property
+        .item-property__column1
+          発送元の地域
+        .item-property__column2
+          岩手県
+      .item-property
+        .item-property__column1
+          発送日の目安
+        .item-property__column2
+          4-7日で発送
+        
+      .purchase
+        = link_to "#", class: "purchase__buy-btn" do
+          商品購入画面へ
+    .detail-main__container--comment-box
+      %textarea{placeholder: "コメントする", class: "comment-area"}
+      %p.attention-text
+        相手のことを考えた丁寧名コメントを心がけましょう。
+      %p.attention-text
+        不快な言葉遣いなどは利用制限や退会処分になることがあります。
+      .post
+        = link_to "#", class: "post__comment-btn" do
+          コメントする
+      .comment-list
+        .comment-list__tytle
+          コメント一覧
+        .comment-list__content
+          .comment-list__content--items
+            .commenter
+              テストユーザー
+            .comment-text
+              こんにちわ
+    .detail-main__container--link
+      = link_to "#", class: "page-link" do
+        < 前の商品
+      = link_to "#", class: "page-link" do
+        後ろの商品 >
+
+= render partial: 'footer'
+= render 'items/sell-btn'
