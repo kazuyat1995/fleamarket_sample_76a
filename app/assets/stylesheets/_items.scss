@@ -110,22 +110,7 @@
         display: flex;
         height: 2rem;
         justify-items: right;
-
-        .right-item3 {
-          color: black;
-          line-height: 38px;
-          padding: 0 0 0 20px;
-
-          a {
-            display: flex;
-            align-items: center;
-            color: black;
-            text-decoration: none;
-            line-height: 32px;
-          }
-        }
-
-        .right-item4 {
+        .right-item1, .right-item3, .right-item4 {
           color: black;
           line-height: 38px;
           padding: 0 0 0 16px;
@@ -134,8 +119,8 @@
             display: flex;
             align-items: center;
             color: black;
-            line-height: 32px;
             text-decoration: none;
+            line-height: 32px;
           }
         }
       }

@@ -1,21 +1,38 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.sign-content 
+  %header.sin-header
+    = render "items/header"
+    %nav.bread-crumbs
+      %ul
+        %li 
+          = link_to root_path do
+            furima
+          = icon('fas','angle-right')
+        %li 
+          - breadcrumb :users_new
+          = breadcrumbs separator: " &rsaquo; "
+  %main.sign-main
+    %section.sign-main__container
+      %h2.sign-main__container__title
+        会員情報入力
+      .sign-main__container__form
+        .form__contents
+          = form_for(@user, url: user_registration_path ) do |f|
+            = render "devise/shared/error_messages", resource: @user
+            .form-group
+              = f.label :ニックネーム
+              %span.form-group__require 必須
+              = f.text_field :nickname, {placeholder: " 例) 山ちゃん",class:'form-group__input'}
+            .form-group
+              = f.label :メールアドレス
+              %span.form-group__require 必須
+              = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: " PC・携帯どちらでも可",class:'form-group__input'}
+            .form-group
+              = f.label :パスワード
+              %span.form-group__require 必須
+              = f.password_field :password,{autocomplete: "new-password",placeholder: " 7文字以上の半角英数字",class:'form-group__input',id:"password"}
+            .form-group
+              = f.label :パスワード 
+              %span.form-group__require 必須
+              = f.password_field :password_confirmation,{autocomplete: "new-password",placeholder: " 7文字以上の半角英数字",class:'form-group__input',id:"password"}
+            .form-group
+              = f.submit '次へ', class: "btn-next"

@@ -1,0 +1,65 @@
+.sign-content 
+  %header.sin-header
+    = render "items/header"
+    %nav.bread-crumbs
+      %ul
+        %li 
+          = link_to root_path do
+            furima
+          = icon('fas','angle-right')
+        %li 
+          - breadcrumb :users_new
+          = breadcrumbs separator: " &rsaquo; "
+  %main.sending-main
+    %section.sending-main__content
+      %h2.sending-main__content__title
+        会員情報入力
+      .sending-main__content__form 
+        .sending-main__content__form__part    
+          =form_for(@address, url: address_path, method: :post) do |f|
+            = render "devise/shared/error_messages", resource: @address
+            .sending-group          
+              = f.label :送付先氏名
+              %span.sending-group__require 必須
+              %br
+              = f.text_field :address_family_name, {placeholder:"例) 梶", class:'sending-group__input--left', required: true}
+              = f.text_field :address_first_name, {placeholder:"例) 健太郎", class:'sending-group__input--right', required: true}
+            .sending-group
+              = f.label :送付先氏名カナ
+              %span.sending-group__require 必須
+              %br
+              = f.text_field :address_family_name_kana, {placeholder:"例) カジ", class:'sending-group__input--left', required: true}
+              = f.text_field :address_first_name_kana, {placeholder:"例) ケンタロウ", class:'sending-group__input--right', required: true}
+      
+            .sending-group
+              = f.label :郵便番号
+              %span.sending-group__require 必須
+              %br
+              = f.text_field :post_code,{autofocus: true, placeholder: "例）810-0801", class: 'sending-group__input', required: true}
+            .sending-group
+              = f.label :都道府県
+              %span.sending-group__require 必須
+              %br
+              = f.select :prefecture, Address.prefectures.keys, {prompt: "選択してください"}, class: 'sending-group__input', required: true
+            .sending-group
+              = f.label :市町村
+              %span.sending-group__require 必須
+              %br
+              = f.text_field :city, autofocus: true, placeholder: "例）名古屋市", class: 'sending-group__input', required: true
+            .sending-group
+              = f.label :番地
+              %span.sending-group__require 必須
+              %br
+              = f.text_field :street_number, autofocus: true, placeholder: "例）中区栄3丁目13-20", class: 'sending-group__input', required: true
+            .sending-group
+              = f.label :建物名
+              %span.sending-group__optional 任意
+              %br
+              = f.text_field :house_name, autofocus: true, placeholder: "例）栄センタービル3F", class: 'sending-group__input'
+            .sending-group
+              = f.label :電話番号
+              %span.sending-group__optional 任意
+              %br
+              = f.text_field :phone_number, autofocus: true, placeholder: "例）090-XXXX-XXXX", class: 'sending-group__input'
+            .sending-group
+              = f.submit '登録', class: "new-signup-btn"
