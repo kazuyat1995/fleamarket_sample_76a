@@ -2,7 +2,7 @@
   .header__Inner
     .header__Inner__top
       .icon
-        =link_to "/" do
+        =link_to root_path do
           %img{:src => "/assets/logo.png"}/
       .searchBox
         %form.form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
@@ -21,9 +21,14 @@
             = icon("fas", "tags")
             ブランド
       %ul.right-items
-        %li.right-item3
-          = link_to '#', class: 'new-btn' do
-            ログイン
-        %li.right-item4
-          = link_to '#', class: 'login-btn' do
-            新規会員登録
+        - if user_signed_in?
+          %li.right-item1
+            = link_to "#" do
+              マイページ
+        - else
+          %li.right-item3
+            = link_to new_user_session_path, class: 'new-btn' do
+              ログイン
+          %li.right-item4
+            = link_to new_user_registration_path , class: 'login-btn' do
+              新規会員登録
