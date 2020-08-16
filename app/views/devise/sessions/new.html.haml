@@ -3,13 +3,8 @@
     = render "items/header"
     %nav.bread-crumbs
       %ul
-        %li 
-          = link_to root_path do
-            furima
-          = icon('fas','angle-right')
-        %li 
-          - breadcrumb :login
-          = breadcrumbs separator: " &rsaquo; "
+        - breadcrumb :login
+        = breadcrumbs separator: " &rsaquo; "
   %main.login-main
     %section.main-container
       .login-form

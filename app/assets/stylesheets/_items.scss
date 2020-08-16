@@ -128,6 +128,29 @@
   }
 }
 
+.bread-crumbs{
+  height: 40px;
+  width: 100%;
+  padding: 0 70px;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  position: relative;
+  background-color: white;
+  ul{
+    height: 40px;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    line-height: 40px;
+    .breadcrumbs{
+      a{
+        text-decoration: none;
+        color: gray;
+      }
+    }
+  }
+}
+
 .footer {
   text-align: center;
   background-color: rgb(34, 34, 34);

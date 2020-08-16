@@ -3,13 +3,8 @@
     = render "items/header"
     %nav.bread-crumbs
       %ul
-        %li 
-          = link_to root_path do
-            furima
-          = icon('fas','angle-right')
-        %li 
-          - breadcrumb :users_new
-          = breadcrumbs separator: " &rsaquo; "
+        - breadcrumb :users_new
+        = breadcrumbs separator: " &rsaquo; "
   %main.sign-main
     %section.sign-main__container
       %h2.sign-main__container__title
