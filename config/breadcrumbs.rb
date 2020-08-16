@@ -15,6 +15,11 @@ crumb :login do
   parent :root
 end
 
+# マイページ
+crumb :mypage do
+  link "マイページ", users_path
+end
+
 
 
 # crumb :projects do

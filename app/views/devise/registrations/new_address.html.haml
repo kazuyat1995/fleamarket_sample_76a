@@ -2,14 +2,9 @@
   %header.sin-header
     = render "items/header"
     %nav.bread-crumbs
-      %ul
-        %li 
-          = link_to root_path do
-            furima
-          = icon('fas','angle-right')
-        %li 
-          - breadcrumb :users_new
-          = breadcrumbs separator: " &rsaquo; "
+      %ul 
+        - breadcrumb :users_new
+        = breadcrumbs separator: " &rsaquo; "
   %main.sending-main
     %section.sending-main__content
       %h2.sending-main__content__title
