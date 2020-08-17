@@ -3,6 +3,17 @@ crumb :root do
   link "トップページ", root_path
 end
 
+# 商品詳細ページ
+crumb :show do
+  link "商品詳細ページ", items_path
+end
+
+# 商品購入ページ
+crumb :confirm do
+  link "商品購入ページ", confirm_items_path
+  parent :show
+end
+
 # 会員情報入力ページ
 crumb :users_new do
   link "会員情報入力", new_user_registration_path

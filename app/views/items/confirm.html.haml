@@ -1,4 +1,8 @@
 = render partial: 'header'
+%nav.bread-crumbs
+  %ul
+    - breadcrumb :confirm
+    = breadcrumbs separator: " &rsaquo; "
 
 .confirm-main
   .confirm-main__container

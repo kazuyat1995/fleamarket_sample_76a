@@ -144,8 +144,12 @@
     line-height: 40px;
     .breadcrumbs{
       a{
+        font-size: 18px;
         text-decoration: none;
         color: gray;
+      }
+      .current {
+        font-size: 18px;
       }
     }
   }
