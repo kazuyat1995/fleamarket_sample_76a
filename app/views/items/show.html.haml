@@ -1,4 +1,8 @@
 = render partial: 'header'
+%nav.bread-crumbs
+  %ul
+    - breadcrumb :show
+    = breadcrumbs separator: " &rsaquo; "
 
 .detail-main
   .detail-main__container

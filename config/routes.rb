@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   end
   root to: 'items#index'
   
-  resources :items, only: [:new, :show] do
+  resources :items, only: [:new] do
     # member do
     collection do
+      get 'show'
       get 'confirm'
       post 'create'
     end
