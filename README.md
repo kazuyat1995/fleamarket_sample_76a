@@ -1,4 +1,4 @@
-<img width="1525" alt="ER図" src="https://user-images.githubusercontent.com/66734345/89371944-bfcc0b80-d71f-11ea-9810-c460367d4362.png">
+![ER図](https://user-images.githubusercontent.com/66255429/90523819-4a911980-e1a8-11ea-8eb0-12dd228b2539.jpg)
 
 ## users
 |Column|Type|Options|
@@ -22,7 +22,6 @@
 |first_name_kana|string|null:false|
 |family_name_kana|string|null:false|
 |birthday|date|null:false|
-|phone_number|integer|unique:true|
 |user_id|references|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
@@ -42,11 +41,16 @@ user_id|references|null:false,foreign_key:true|
 ## address
 |Column|Type|Options|
 |------|----|-------|
+|address_family_name|string|null:false|
+|address_first_name|string|null:false|
+|address_family_name_kana|string|null:false|
+|address_first_name_kana|string|null:false|
 |post_code|integer|null:false|
 |prefecture|string|null:false|
 |city|string|null:false|
 |street_number|string|null:false|
-|house_name|string||
+|house_name|string|
+|phone_number|integer|unique:true|
 |user_id|references|null: false,foreign_key:true|
 ### Association
 - belongs_to: user
