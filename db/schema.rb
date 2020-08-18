@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_08_13_022436) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "address_first_name", null: false
     t.string "address_family_name", null: false
-    t.string "address_first_name_kana", null: false
+    t.string "address_first_name", null: false
     t.string "address_family_name_kana", null: false
+    t.string "address_first_name_kana", null: false
     t.string "post_code", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2020_08_13_022436) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
     t.string "family_name", null: false
-    t.string "first_name_kana", null: false
+    t.string "first_name", null: false
     t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
     t.date "birth_day", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_022436) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

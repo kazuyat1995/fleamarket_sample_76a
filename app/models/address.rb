@@ -10,24 +10,39 @@ class Address < ApplicationRecord
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   }
-  validates :address_first_name, format: {
-    with: /\A[^ -~｡-ﾟ]+\z/,
-    message: "全角で入力して下さい"
-  },presence: true
   validates :address_family_name, format: {
     with: /\A[^ -~｡-ﾟ]+\z/,
     message: "全角で入力して下さい"
   },presence: true
-  validates :address_first_name_kana, format: {
-    with: /\A[\p{katakana} ー－&&[^ -~｡-ﾟ]]+\z/,
-    message: "全角カタカナのみで入力して下さい"
+
+  validates :address_first_name, format: {
+    with: /\A[^ -~｡-ﾟ]+\z/,
+    message: "全角で入力して下さい"
   },presence: true
-  validates :address_first_name_kana, format: {
-    with: /\A[\p{katakana} ー－&&[^ -~｡-ﾟ]]+\z/,
-    message: "全角カタカナのみで入力して下さい"
-  },presence: true
+
   validates :address_family_name_kana, format: {
     with: /\A[\p{katakana} ー－&&[^ -~｡-ﾟ]]+\z/,
     message: "全角カタカナのみで入力して下さい"
   },presence: true
+
+  validates :address_first_name_kana, format: {
+    with: /\A[\p{katakana} ー－&&[^ -~｡-ﾟ]]+\z/,
+    message: "全角カタカナのみで入力して下さい"
+  },presence: true
+  
+  validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/},presence: true
+
+  validates :prefecture, presence: true 
+
+  validates :city,format: {
+    with: /\A[^ -~｡-ﾟ]+\z/,
+    message: "全角で入力して下さい"
+  }, presence: true
+
+  validates :street_number, presence: true
+
+  validates :phone_number, format: {
+    with: /\A\d{10,11}\z/,
+  }
+
 end
