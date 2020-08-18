@@ -40,12 +40,12 @@
               = f.label :市町村
               %span.sending-group__require 必須
               %br
-              = f.text_field :city, autofocus: true, placeholder: "例）名古屋市", class: 'sending-group__input', required: true
+              = f.text_field :city, autofocus: true, placeholder: "例）名古屋市中区栄", class: 'sending-group__input', required: true
             .sending-group
               = f.label :番地
               %span.sending-group__require 必須
               %br
-              = f.text_field :street_number, autofocus: true, placeholder: "例）中区栄3丁目13-20", class: 'sending-group__input', required: true
+              = f.text_field :street_number, autofocus: true, placeholder: "例）3丁目13-20", class: 'sending-group__input', required: true
             .sending-group
               = f.label :建物名
               %span.sending-group__optional 任意
@@ -55,6 +55,6 @@
               = f.label :電話番号
               %span.sending-group__optional 任意
               %br
-              = f.text_field :phone_number, autofocus: true, placeholder: "例）090-XXXX-XXXX", class: 'sending-group__input'
+              = f.text_field :phone_number, autofocus: true, placeholder: "例）090XXXXXXXX (ハイフンなし)", class: 'sending-group__input'
             .sending-group
               = f.submit '登録', class: "new-signup-btn"
