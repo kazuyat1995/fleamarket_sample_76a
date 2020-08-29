@@ -1,4 +1,4 @@
-![ER図](https://user-images.githubusercontent.com/66255429/90523819-4a911980-e1a8-11ea-8eb0-12dd228b2539.jpg)
+![ER図](https://user-images.githubusercontent.com/66255429/91626877-c6cbfe00-e9ed-11ea-9cd9-51c5985bde6e.png)
 
 ## users
 |Column|Type|Options|
