@@ -20,5 +20,5 @@ class Profile < ApplicationRecord
     message: "全角カタカナのみで入力して下さい"
   },presence: true
 
-  validates :birth_day, presence: true
+  validates :birthday, presence: true
 end

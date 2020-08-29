@@ -29,7 +29,7 @@
               = f.label :生年月日
               %span.profile-group__require 必須
               %br
-              = f.date_select :birth_day, { use_month_numbers:true, prompt:"--", end_year:1900, class:'profile-group__input--half'}
+              = f.date_select :birthday, { use_month_numbers:true, prompt:"--", end_year:1900, class:'profile-group__input--half'}
             .profile-group
               = f.submit '次へ', class: "profile-btn"
 
