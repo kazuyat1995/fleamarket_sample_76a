@@ -76,3 +76,6 @@ gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem "gretel"
+gem 'payjp'
+gem "jquery-rails"
+gem 'jquery-turbolinks'

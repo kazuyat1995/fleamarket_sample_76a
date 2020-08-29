@@ -8,9 +8,19 @@ Rails.application.routes.draw do
     get 'address', to: 'users/registrations#new_address'
     post 'address', to: 'users/registrations#create_address'
   end
+
   root to: 'items#index'
   resources :items, only: [:new, :show]
-  resources :users, only: [:index, :edit]
-  resources :credit_cards, only: [:new]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users, only: [:show, :edit]
+
+  resources :cards, only: [:new, :create, :destroy, :show] do
+    collection do
+      get 'regist_done'
+      get 'delete_done'
+    end
+    member do
+      get 'buy'
+      post 'pay'
+    end
+  end
 end
