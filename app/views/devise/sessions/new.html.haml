@@ -14,7 +14,7 @@
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .items-group
               = f.label :メールアドレス
-              = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: " PC・携帯どちらでも可",class:'items-group__input'}
+              = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: " 登録したメールアドレス",class:'items-group__input'}
             .items-group
               = f.label :パスワード
               = f.password_field :password, {autocomplete: "off",placeholder: " 7文字以上",class:'items-group__input',id:"password"}
