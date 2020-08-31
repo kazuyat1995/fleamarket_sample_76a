@@ -57,12 +57,13 @@ ActiveRecord::Schema.define(version: 2020_08_29_015230) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "detail", null: false
-    t.integer "price", null: false
+    t.bigint "category_id", null: false
+    t.string "brand"
     t.string "condition", null: false
     t.integer "postage", null: false
-    t.string "brand"
+    t.integer "until_shipping", null: false
+    t.integer "price", null: false
     t.string "stock", default: "1"
-    t.bigint "category_id", null: false
     t.bigint "buyer_id", null: false
     t.bigint "seller_id", null: false
     t.datetime "created_at", null: false
@@ -93,9 +94,6 @@ ActiveRecord::Schema.define(version: 2020_08_29_015230) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["nickname"], name: "index_users_on_nickname", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "users"
