@@ -6,12 +6,17 @@
         - breadcrumb :login
         = breadcrumbs separator: " &rsaquo; "
   %main.login-main
-    %section.main-container
-      .login-form
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .items-adress
-            = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: "メールアドレス",class:'login-form__input'}
-          .items-password
-            = f.password_field :password, {autocomplete: "off",placeholder: "パスワード",class:'login-form__input',id:"password"}
-          .actions
-            = f.submit "ログイン", class: 'login-btn'
+    %section.login-main__container
+      %h2.login-main__container__title
+        ログイン画面
+      .login-main__container__form
+        .login__contents
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .items-group
+              = f.label :メールアドレス
+              = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: " 登録したメールアドレス",class:'items-group__input'}
+            .items-group
+              = f.label :パスワード
+              = f.password_field :password, {autocomplete: "off",placeholder: " 7文字以上",class:'items-group__input',id:"password"}
+            .items-group
+              = f.submit "ログイン", class: 'login-btn'
