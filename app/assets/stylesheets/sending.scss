@@ -9,10 +9,11 @@
     &__content {
       background-color: white;
       width: 600px;
-      margin: auto;
+      margin: 50px auto;
       padding-bottom: 50px;
       &__title {
-        height: 30px;
+        height: 50px;
+        line-height: 20px;
         font-size: 20px;
         text-align: center;
         border-bottom: 1px whitesmoke solid;
