@@ -19,6 +19,16 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:index, :edit, :show] do
+    collection do
+      get 'sold_lists'
+      get 'display_lists'
+      get 'confirm_deletion'
+      get 'confirm_edit'
+      post 'confirm_edit'
+    end
+  end
+
   resources :users, only: [:index, :edit]
   resources :credit_cards, only: [:new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
