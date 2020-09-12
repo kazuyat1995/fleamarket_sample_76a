@@ -38,17 +38,27 @@
           height: 36px;
           margin-bottom: 5px;
 
-          input {
+          .input {
             width: 100%;
-            padding: 0 0 0 5px;
+            padding: 0 0 0 10px;
           }
 
-          button {
+          .serch-btm {
             width: 36px;
             border: 0;
             cursor: pointer;
             padding: 10px;
             background-color: #3ccace;
+            position: relative;
+            &__hidden {
+              display: none;
+            }
+            &__icon {
+              position: absolute;
+              margin: auto;
+              font-size: 15px;
+            }
+
           }
         }
       }
@@ -123,6 +133,33 @@
             line-height: 32px;
           }
         }
+      }
+    }
+  }
+}
+
+.bread-crumbs{
+  height: 40px;
+  width: 100%;
+  padding: 0 70px;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  position: relative;
+  background-color: white;
+  ul{
+    height: 40px;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    line-height: 40px;
+    .breadcrumbs{
+      a{
+        font-size: 18px;
+        text-decoration: none;
+        color: gray;
+      }
+      .current {
+        font-size: 18px;
       }
     }
   }

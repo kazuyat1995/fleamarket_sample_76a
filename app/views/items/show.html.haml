@@ -1,4 +1,8 @@
 = render partial: 'header'
+%nav.bread-crumbs
+  %ul
+    - breadcrumb :show
+    = breadcrumbs separator: " &rsaquo; "
 
 .detail-main
   .detail-main__container
@@ -71,7 +75,7 @@
           4-7日で発送
         
       .purchase
-        = link_to "#", class: "purchase__buy-btn" do
+        = link_to confirm_items_path , class: "purchase__buy-btn" do
           商品購入画面へ
     .detail-main__container--comment-box
       %textarea{placeholder: "コメントする", class: "comment-area"}

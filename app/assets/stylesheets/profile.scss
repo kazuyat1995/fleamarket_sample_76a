@@ -3,31 +3,6 @@
   background-color: whitesmoke;
   .sin-header {
     background-color: white;
-    .bread-crumbs{
-      height: 40px;
-      width: 100%;
-      padding: 0 50px;
-      border-top: 1px solid #eee;
-      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-      position: relative;
-      background-color: white;
-      ul{
-        height: 40px;
-        width: 1155px;
-        margin: 0 auto;
-        display: flex;
-        line-height: 40px;
-        li{
-          margin-left: 5px;
-          font-size: 14px;
-          a{
-            text-decoration: none;
-            margin: 5px;
-            color: gray;
-          }
-        }
-      }
-    }
   }
   .profile-main {
     background-color: whitesmoke;
@@ -78,7 +53,7 @@
                 height: 40px;
                 float: right;
               }
-              #profile_birth_day_1i,#profile_birth_day_2i,#profile_birth_day_3i{
+              #profile_birthday_1i,#profile_birthday_2i,#profile_birthday_3i{
                 margin-bottom: 40px;
                 border-radius: 5px;
                 width: 80px;

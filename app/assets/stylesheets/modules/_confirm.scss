@@ -1,0 +1,98 @@
+.confirm-main {
+  background-color: #f8f8f8;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &__container {
+    background-color: white;
+    height: 1100px;
+    width: 700px;
+    padding: 14px 40px 40px;
+    &--header {
+      margin-top: 10px;
+      .confirm-tytle {
+        font-size: 23px;
+        font-weight: bolder;
+      }
+      .confirm-text {
+        font-size: 18px;
+        margin: 10px 20px;
+      }
+    }
+    &--product-image {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      .img {
+        height: 180px;
+        width: 280px;
+        object-fit: cover;
+        margin: auto;
+      }  
+    } 
+    &--property-box {
+      margin-top: 50px;
+      .item-property {
+        display: table;
+        width: 100%;
+        border: 1px solid #dedede;
+        &__column1 {
+          display: table-cell;
+          background-color: #eee;
+          width: 10%;
+          font-weight: 400;
+          padding: 8px;
+          font-size: 14px;
+          text-align: center;
+        }
+        &__column2 {
+          display: table-cell;
+          background-color: white;
+          width: 30%;
+          font-weight: 400;
+          padding: 8px;
+          font-size: 14px;
+        }
+      }
+    }
+    &--purchase-box {
+      margin: 10px 0;
+      display: flex;
+      .confirm-subtotal {
+        height: 100px;
+        line-height: 100px;
+        margin: 0 100px 0 150px;
+        font-size: 25px;
+        font-weight: bolder;
+      }
+      .confirm-price {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-weight: bolder;
+      }
+    }
+    &--buy-box {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid #999999;
+      border-bottom: 1px solid #999999;
+      .buy-btn, .deletion-btn {
+        background: #3CCACE;
+        border: 1px solid #3CCACE;
+        height: 50px;
+        width: 60%;
+        color: white;
+        font-size: 18px;
+        border-radius: 30px;
+        text-align: center;
+        line-height: 50px;
+        text-decoration: none;
+        margin: auto;
+      }
+    }
+  }
+}

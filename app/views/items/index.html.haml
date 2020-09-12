@@ -23,7 +23,7 @@
         .list__gazo
           %span.number 
             1
-          = image_tag "/assets/pict-reason-01.jpg" , class: "gazo";
+          = image_tag "pict-reason-01.jpg" , class: "gazo";
         %h3.list__text
           %span.text 3分
           ですぐに出品
@@ -33,7 +33,7 @@
         .list__gazo
           %span.number 
             2
-          = image_tag "/assets/pict-reason-02.jpg" , class: "gazo";
+          = image_tag "pict-reason-02.jpg" , class: "gazo";
         %h3.list__text
           %span.text
             シンプル
@@ -44,7 +44,7 @@
         .list__gazo
           %span.number
             3
-          = image_tag "/assets/pict-reason-03.jpg" , class: "gazo";
+          = image_tag "pict-reason-03.jpg" , class: "gazo";
         %h3.list__text
           手数料
           %span.text
@@ -72,21 +72,21 @@
     .items
       %section.item
         %figure.item__img
-          =image_tag "/assets/icon-01.png" , class: "item__img__icon"
+          =image_tag "icon-01.png" , class: "item__img__icon"
         %h3.item__subtitle
           簡単に売り買いできる
         %p.item__detail
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       %section.item
         %figure.item__img
-          =image_tag "/assets/icon-03.png" , class: "item__img__icon"
+          =image_tag "icon-03.png" , class: "item__img__icon"
         %h3.item__subtitle
           売上金は即日振込みに対応
         %p.item__detail
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします
       %section.item
         %figure.item__img
-          =image_tag "/assets/icon-04.png" , class: "item__img__icon"
+          =image_tag "icon-04.png" , class: "item__img__icon"
         %h3.item__subtitle
           様々な支払いに対応
         %p.item__detail
@@ -104,77 +104,93 @@
           = link_to "#" do
             %figure.productList--img
               =image_tag "https://d3pbyuzcd27kd.cloudfront.net/wp-content/uploads/sites/8/2019/05/23191708/Rain-Drop-from-Garden-Rose.jpg" , class: "image__category"
-          .productList--body
-            %h3.product--name
-              薔薇
-            .details
-              %ul
-                %li
-                  1000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                    1
-              %p
-                (税込)
+            .productList--body
+              %h3.product--name
+                薔薇
+              .details
+                %ul
+                  %li
+                    1000円
+                  %li
+                    %i.fa.fa-star.likeIcon
+                      1
+                %p
+                  (税込)
         .productList
           = link_to "#" do
             %figure.productList--img
               =image_tag "https://www.edogawa-kankyozaidan.jp/files/file/1505119769.jpg" , class: "image__category"
-          .productList--body
-            %h3.product--name
-              ひまわり
-            .details
-              %ul
-                %li
-                  2000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                    2
-              %p
-                (税込)
+            .productList--body
+              %h3.product--name
+                ひまわり
+              .details
+                %ul
+                  %li
+                    2000円
+                  %li
+                    %i.fa.fa-star.likeIcon
+                      2
+                %p
+                  (税込)
         .productList
           = link_to "#" do
             %figure.productList--img
               =image_tag "https://lovegreen.net/wp-content/uploads/2016/03/GettyImages-460339841-e1481252505595.jpg" , class: "image__category"
-          .productList--body
-            %h3.product--name
-              紫陽花
-            .details
-              %ul
-                %li
-                  3000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                    3
-              %p
-                (税込)
+            .productList--body
+              %h3.product--name
+                紫陽花
+              .details
+                %ul
+                  %li
+                    3000円
+                  %li
+                    %i.fa.fa-star.likeIcon
+                      3
+                %p
+                  (税込)
         .productList
           = link_to "#" do
             %figure.productList--img
-              =image_tag "https://lh3.googleusercontent.com/proxy/iVP9mQepuDyYzXMgijujKJGpEcY4n7HTVV-v_nm7BQFDUaB4bTpQURQw7arMYBxOVp-tSjHiuANOT6jxosdeDuahb9gmntZiGA" , class: "image__category"
-          .productList--body
-            %h3.product--name
-              たんぽぽ
-            .details
-              %ul
-                %li
-                  4000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                    4
-              %p
-                (税込)
+              =image_tag "https://d3pbyuzcd27kd.cloudfront.net/wp-content/uploads/sites/8/2020/04/10123945/1583378119242_365903_photo.jpg" , class: "image__category"
+            .productList--body
+              %h3.product--name
+                たんぽぽ
+              .details
+                %ul
+                  %li
+                    4000円
+                  %li
+                    %i.fa.fa-star.likeIcon
+                      4
+                %p
+                  (税込)
+        .productList
+          = link_to "#" do
+            %figure.productList--img
+              =image_tag "https://d3pbyuzcd27kd.cloudfront.net/wp-content/uploads/sites/8/2019/05/23191708/Rain-Drop-from-Garden-Rose.jpg" , class: "image__category"
+            .productList--body
+              %h3.product--name
+                薔薇
+              .details
+                %ul
+                  %li
+                    50000円
+                  %li
+                    %i.fa.fa-star.likeIcon
+                      5
+                %p
+                  (税込)
   %section.pickupBrand
     %h2.head
       ピックアップブランド
     .productBox
       .productHead
-        %a{:href => "#"}
+        = link_to "#" do
           %h3.title
             アーカイバ
       .productLists
         .productList
-          %a{:href => "#"}
+          = link_to "#" do
             %figure.productList--img
               =image_tag "https://image.rakuten.co.jp/x-sell/cabinet/newbag/1908/42445944.jpg" , class: "image__category"
             .productList--body
@@ -190,7 +206,7 @@
                 %p
                   (税込)
         .productList
-          %a{:href => "#"}
+          = link_to "#" do
             %figure.productList--img
               =image_tag "https://image.rakuten.co.jp/x-sell/cabinet/newbag/1908/42445944.jpg" , class: "image__category"
             .productList--body
@@ -206,7 +222,7 @@
                 %p
                   (税込)
         .productList
-          %a{:href => "#"}
+          = link_to "#" do
             %figure.productList--img
               =image_tag "https://image.rakuten.co.jp/x-sell/cabinet/newbag/1908/42445944.jpg" , class: "image__category"
             .productList--body
@@ -222,7 +238,7 @@
                 %p
                   (税込)
         .productList
-          %a{:href => "#"}
+          = link_to "#" do
             %figure.productList--img
               =image_tag "https://image.rakuten.co.jp/x-sell/cabinet/newbag/1908/42445944.jpg" , class: "image__category"
             .productList--body
@@ -235,6 +251,22 @@
                   %li
                     %i.fa.fa-star.likeIcon
                       4
+                %p
+                  (税込)
+        .productList
+          = link_to "#" do
+            %figure.productList--img
+              =image_tag "https://d3pbyuzcd27kd.cloudfront.net/wp-content/uploads/sites/8/2019/05/23191708/Rain-Drop-from-Garden-Rose.jpg" , class: "image__category"
+            .productList--body
+              %h3.product--name
+                薔薇
+              .details
+                %ul
+                  %li
+                    65000円
+                  %li
+                    %i.fa.fa-star.likeIcon
+                      5
                 %p
                   (税込)
 %aside.appVisual3

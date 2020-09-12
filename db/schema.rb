@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_082429) do
+ActiveRecord::Schema.define(version: 2020_08_29_015230) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "address_first_name", null: false
     t.string "address_family_name", null: false
-    t.string "address_first_name_kana", null: false
+    t.string "address_first_name", null: false
     t.string "address_family_name_kana", null: false
+    t.string "address_first_name_kana", null: false
     t.string "post_code", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "street_number", null: false
     t.string "house_name"
-    t.string "phone_number", null: false
+    t.string "phone_number"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,14 +36,55 @@ ActiveRecord::Schema.define(version: 2020_08_22_082429) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "comment", null: false
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_comments_on_item_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "detail", null: false
+    t.integer "price", null: false
+    t.string "condition", null: false
+    t.integer "postage", null: false
+    t.string "brand"
+    t.string "stock", default: "1"
+    t.bigint "category_id", null: false
+    t.bigint "buyer_id", null: false
+    t.bigint "seller_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
     t.string "family_name", null: false
-    t.string "first_name_kana", null: false
+    t.string "first_name", null: false
     t.string "family_name_kana", null: false
-    t.date "birth_day", null: false
+    t.string "first_name_kana", null: false
+    t.date "birthday", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,10 +101,17 @@ ActiveRecord::Schema.define(version: 2020_08_22_082429) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "comments", "items"
+  add_foreign_key "comments", "users"
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "users", column: "buyer_id"
+  add_foreign_key "items", "users", column: "seller_id"
   add_foreign_key "profiles", "users"
 end

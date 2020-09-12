@@ -23,4 +23,24 @@ Rails.application.routes.draw do
       post 'pay'
     end
   end
+  
+  resources :items, only: [:new] do
+    # member do
+    collection do
+      get 'show'
+      get 'confirm'
+      post 'create'
+    end
+  end
+
+  resources :users, only: [:index, :edit, :show] do
+    collection do
+      get 'sold_lists'
+      get 'display_lists'
+      get 'confirm_deletion'
+      get 'confirm_edit'
+      post 'confirm_edit'
+    end
+  end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -79,3 +79,4 @@ gem "gretel"
 gem 'payjp'
 gem "jquery-rails"
 gem 'rails_same_site_cookie'
+gem "ancestry"

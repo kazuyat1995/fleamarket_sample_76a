@@ -3,6 +3,17 @@ crumb :root do
   link "トップページ", root_path
 end
 
+# 商品詳細ページ
+crumb :show do
+  link "商品詳細ページ", items_path
+end
+
+# 商品購入ページ
+crumb :confirm do
+  link "商品購入ページ", confirm_items_path
+  parent :show
+end
+
 # 会員情報入力ページ
 crumb :users_new do
   link "会員情報入力", new_user_registration_path
@@ -15,7 +26,28 @@ crumb :login do
   parent :root
 end
 
+# マイページ
+crumb :mypage do
+  link "マイページ", users_path
+end
 
+# 商品出品一覧
+crumb :user_display_lists do
+  link "商品出品一覧", display_lists_users_path
+  parent :mypage
+end
+
+# 商品売却一覧
+crumb :user_sold_lists do
+  link "商品売却一覧", sold_lists_users_path
+  parent :mypage
+end
+
+# 商品削除確認ページ
+crumb :confirm_deletion do
+  link "商品削除確認ページ", confirm_deletion_users_path
+  parent :mypage
+end
 
 # crumb :projects do
 #   link "Projects", projects_path

@@ -1,4 +1,8 @@
 = render 'items/header'
+%nav.bread-crumbs
+  %ul
+    - breadcrumb :mypage
+    = breadcrumbs separator: " &rsaquo; "
 .mypage
   = render "users/mypage/mypage-side"
   = render "users/mypage/mypage-main"
