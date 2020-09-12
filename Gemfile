@@ -76,6 +76,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem "gretel"
-
+gem 'payjp'
+gem "jquery-rails"
+gem 'rails_same_site_cookie'
 gem "ancestry"
-gem 'jquery-rails'

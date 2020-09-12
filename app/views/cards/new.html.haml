@@ -1,0 +1,43 @@
+= render 'items/header'
+.mypage
+  = render "users/mypage/mypage-side"
+  .card 
+    %section.card-content
+      .card-content__head
+        %h2.card-content__head__text
+          クレジットカード情報入力
+      .card-content__form
+        = form_with model: @card, id: "all-form", url: cards_path, local: true do |f| 
+          .form-group
+            .card-number
+              .card-number__text
+                カード番号
+              .card-number__form
+                = f.text_field :card_number, class: "card-number__form__input", placeholder: "半角数字のみ", maxlength: "16", id: "number"
+              .card-icon
+                %ul.card-icon-list
+                  %li.card-icon-image
+                    = image_tag "card/VISA.svg", size: "40x30", class: 'credit_logo'
+                    = image_tag "card/Master.png", size: "40x30", class: 'credit_logo'
+                    = image_tag "card/JCB.png", size: "40x30", class: 'credit_logo'
+                    = image_tag "card/Amex.svg", size: "40x30", class: 'credit_logo'
+                    = image_tag "card/Diners.png", size: "40x30", class: 'credit_logo'
+            .expiration-date
+              .expiration-date__text
+                有効期限
+              .expiration-date__form
+                = f.select :exp_month, [["01", 1],["02", 2],["03", 3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]], {}, id: "exp_month", class: "expiration-date__form__input"
+                .expiration-text 月
+                = f.select :exp_year, [["2020", 2020],["2021", 2021],["2022", 2022],["2023",2023],["2024",2024],["2025",2025],["2026",2026],["2027",2027],["2028",2028],["2029",2029],["2030",2030]], {}, id: "exp_year", class: "expiration-date__form__input"
+                .expiration-text 年
+            .security-code
+              .security-code__text
+                セキュリティーコード
+              .security-code__form
+                = f.text_field :security_code, placeholder: "カード背面４桁もしくは３桁の番号", maxlength: "4", id: "cvc", class: "security-code__form__input"
+            = f.submit "追加する", class: "submit-btn", id: "charge_form"
+            .test-card
+              = link_to "https://pay.jp/docs/testcard", class: "test-card-link" do
+                %span.test-card
+                  テストカード
+= render 'items/footer'
