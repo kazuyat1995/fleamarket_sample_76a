@@ -31,7 +31,6 @@
   justify-content: center;
   &__container {
     background-color: white;
-    height: 1550px;
     width: 700px;
     padding: 14px 40px 40px;
     // 出品画像
@@ -41,23 +40,41 @@
         display: flex;
       }
       &__content {
-        height: 160px;
         border-bottom: 1px solid #999999;
+        padding-bottom: 20px;
         &--explanation {
           font-size: 12px;
           margin: 10px;
         }
-        &--reference-box {
-          background-color: #3CCACE;
-          height: 120px;
-          width: 100%;
-          border-radius: 30px;
-          font-size: 12px;
-          text-align: center;
-          line-height: 120px;
-        }
-        .box-link {
-          display: none;
+        #image-box {
+          display: flex;
+          .js-file_group {
+            margin: 5px 2px;
+            .image-previews{
+              position: relative;
+              display: flex;
+              display: none;
+              .image-preview {
+                height: 150px;
+                width: 150px;
+                object-fit: cover;
+              }
+              .js-remove {
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: white;
+                text-shadow: 1px 2px 3px black;
+                font-weight: lighter;
+              }
+            }
+            .file-field{
+              padding-left: 2px;
+              .js-file {
+                font-size: 10px;
+              }
+            }
+          }
         }
       }
     }

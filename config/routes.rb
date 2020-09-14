@@ -24,12 +24,9 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items, only: [:new] do
-    # member do
-    collection do
-      get 'show'
+  resources :items, only: [:show, :new, :create] do
+    member do
       get 'confirm'
-      post 'create'
     end
   end
 

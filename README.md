@@ -1,4 +1,4 @@
-![ER図](https://user-images.githubusercontent.com/66255429/91626877-c6cbfe00-e9ed-11ea-9cd9-51c5985bde6e.png)
+![ER図](https://user-images.githubusercontent.com/66255429/92296867-3f920380-ef74-11ea-9401-ac388369368e.png)
 
 ## users
 
@@ -64,16 +64,19 @@
 - belongs_to: user
 
 ## items
-
-| Column    | Type       | Options                     |
-| --------- | ---------- | --------------------------- |
-| name      | string     | null:false                  |
-| detail    | text       | null:false                  |
-| price     | integer    | null:false                  |
-| condition | string     | null:false                  |
-| category  | references | null:false,foreign_key:true |
-| brand     | references | null:false,foreign_key:true |
-| postage   | integer    | null:false                  |
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|detail|text|null:false|
+|category_id|references|null:false,foreign_key:true|
+|brand|string|
+|condition|string|null:false|
+|postage|integer|null:false|
+|until_shipping|string|null:false|
+|price|integer|null:false|
+|stock|
+|seller_id|references|null: false,foreign_key:true|
+|buyer_id|references|null: false,foreign_key:true|
 
 ### Association
 

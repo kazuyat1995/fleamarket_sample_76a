@@ -8,10 +8,28 @@ class ItemsController < ApplicationController
   def confirm
   end
 
-  def create
+  def new
+    if user_signed_in?
+      @item = Item.new
+      @item.images.new
+    else
+      redirect_to root_path, flash: {notice: "商品の出品にはログインする必要があります"}
+    end
   end
 
-  def new
+  def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path, flash: {notice: "商品の出品が完了しました"}
+    else
+      render :new
+    end
   end
+
+  private
+    def item_params
+      params.require(:item).permit(:name, :detail, :brand, :condition, :postage, :area, :until_shipping, :price, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
+    end
+
 
 end
