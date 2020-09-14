@@ -1,4 +1,4 @@
-![ER図](https://user-images.githubusercontent.com/66255429/91723811-4ff25900-ebd7-11ea-9f20-70d941c8c1e6.png)
+![ER図](https://user-images.githubusercontent.com/66255429/92296867-3f920380-ef74-11ea-9401-ac388369368e.png)
 
 ## users
 |Column|Type|Options|
@@ -61,16 +61,15 @@ user_id|references|null:false,foreign_key:true|
 |------|----|-------|
 |name|string|null:false|
 |detail|text|null:false|
-|price|integer|null:false|
+|category_id|references|null:false,foreign_key:true|
 |brand|string|
 |condition|string|null:false|
 |postage|integer|null:false|
-|until_shipping|integer|null:false|
-|stock|string|null:false|
-|category|references|null:false,foreign_key:true|
-|seller_id|references|null:false,foreign_key:true|
-|buyer_id|references|null:false,foreign_key:true|
-
+|until_shipping|string|null:false|
+|price|integer|null:false|
+|stock|
+|seller_id|references|null: false,foreign_key:true|
+|buyer_id|references|null: false,foreign_key:true|
 ### Association
 - has_many :images
 - has_many :comments

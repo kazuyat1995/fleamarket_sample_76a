@@ -57,19 +57,18 @@ ActiveRecord::Schema.define(version: 2020_08_29_015230) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "detail", null: false
-    t.bigint "category_id", null: false
     t.string "brand"
     t.string "condition", null: false
     t.integer "postage", null: false
+    t.string "area", null: false
     t.integer "until_shipping", null: false
     t.integer "price", null: false
     t.string "stock", default: "1"
-    t.bigint "buyer_id", null: false
-    t.bigint "seller_id", null: false
+    t.bigint "seller_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
-    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
@@ -94,13 +93,15 @@ ActiveRecord::Schema.define(version: 2020_08_29_015230) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "seller_id"
   add_foreign_key "profiles", "users"
