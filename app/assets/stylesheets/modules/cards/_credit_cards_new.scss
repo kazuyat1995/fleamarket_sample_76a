@@ -1,0 +1,125 @@
+.card {
+  float: right;
+  width: 700px;
+  background-color: whitesmoke;
+}
+
+.card-content {
+  &__head {
+    padding: 16px 32px;
+    border-bottom: 1px #333 solid;
+
+    &__text {
+      color: #4e5863;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 55px;
+      text-align: center;
+    }
+  }
+
+  &__form {
+    padding: 32px 0 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card-number {
+  &__text {
+    font-size: 15px;
+    line-height: 1.4rem;
+  }
+
+  &__form {
+    margin-top: 16px;
+
+    &__input {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      height: 48px;
+      margin: 0;
+      outline: none;
+      padding: 0 16px;
+      width: 375px;
+    }
+  }
+}
+
+.card-icon-image {
+  margin: 5px;
+}
+
+.expiration-date {
+  margin-top: 28px;
+
+  &__text {
+    font-size: 15px;
+    line-height: 1.4rem;
+  }
+
+  &__form {
+    display: flex;
+    margin-top: 16px;
+
+    &__input {
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      height: 48px;
+      margin: 0;
+      outline: none;
+      padding: 0 56px 0 16px;
+      width: 149px;
+    }
+  }
+}
+
+.expiration-text {
+  line-height: 48px;
+  width: 48px;
+  text-align: center;
+}
+
+.security-code {
+  margin-top: 28px;
+
+  &__text {
+    font-size: 15px;
+    line-height: 1.4rem;
+  }
+
+  &__form {
+    margin-top: 16px;
+
+    &__input {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      height: 48px;
+      margin: 0;
+      outline: none;
+      padding: 0 16px;
+      width: 375px;
+    }
+  }
+}
+
+.submit-btn {
+  background-color: #3ccace;
+  border-radius: 4px;
+  border-style: none;
+  font-size: 17px;
+  color: #fff;
+  width: 375px;
+  height: 48px;
+  line-height: 17px;
+  margin-top: 52px;
+}
+
+.test-card {
+  margin-top: 30px;
+}

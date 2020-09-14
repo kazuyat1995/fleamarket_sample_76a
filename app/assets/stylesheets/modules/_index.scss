@@ -1,8 +1,8 @@
 .main-contens {
   background-color: white;
-  overflow: scroll;
-
+  
   .visual {
+    background-color: gray;
     width: 100%;
     height: 560px;
     background-image: image-url("bg-mainVisual-pict_pc.jpg");
@@ -16,7 +16,6 @@
 
     &__content {
       max-width: 1280px;
-      line-height: 1.2;
       width: 100%;
       margin: 0 auto;
       padding: 35px 0 0 0;
@@ -25,6 +24,7 @@
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
         font-size: 60px;
         color: white;
+        line-height: 1.2;
       }
 
       &__text {
@@ -69,7 +69,7 @@
       text-align: center;
       display: flex;
       width: 100%;
-      max-width: 1050px;
+      max-width: 1020px;
       margin: 0 auto;
 
       .list {
@@ -213,15 +213,17 @@
           font-size: 17px;
           font-weight: 200;
           text-align: left;
+          margin: 0 0 40px;
         }
       }
     }
   }
 
   .pickupCategory {
+    background-color: #f8f8f8;
     padding: 80px 0 0;
-    background-color: white;
     height: 100%;
+    padding-bottom: 80px;
 
     .head {
       text-align: center;
@@ -246,10 +248,10 @@
       }
 
       .productLists {
-        width: 780px;
+        width: 900px;
         margin: 26px auto;
         display: flex;
-        justify-content: space-around;
+        overflow-x: scroll;
 
         .productList {
           width: 220px;
@@ -281,39 +283,40 @@
                 object-fit: cover;
               }
             }
-          }
+            .productList--body {
+              background-color: white;
+              color: black;
+              padding: 16px;
 
-          .productList--body {
-            background-color: white;
-            color: black;
-            padding: 16px;
-
-            .product--name {
-              overflow: hidden;
-              line-height: 1.5;
-              font-size: 16px;
-              text-align: left;
-            }
-
-            .details {
-              font-size: 16px;
-
-              ul {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                i {
-                  display: inline-block;
-                  font-size: inherit;
-                  text-rendering: auto;
-                  -webkit-font-smoothing: antialiased;
-                }
+              .product--name {
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+                text-align: left;
               }
 
-              p {
-                font-size: 10px;
-                text-align: left;
+              .details {
+                font-size: 16px;
+
+                ul {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+  
+                  i {
+                    -webkit-font-smoothing: antialiased;
+                    display: inline-block;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    line-height: 1;
+                  }
+                }
+
+                p {
+                  font-size: 10px;
+                  text-align: left;
+                }
               }
             }
           }
@@ -323,9 +326,10 @@
   }
 
   .pickupBrand {
-    background-color: white;
+    background-color: #f8f8f8;
     padding: 80px 0 0;
     height: 100%;
+    padding-bottom: 80px;
 
     .head {
       text-align: center;
@@ -350,10 +354,10 @@
       }
 
       .productLists {
-        width: 780px;
+        width: 900px;
         margin: 26px auto;
         display: flex;
-        justify-content: space-around;
+        overflow-x: scroll;
 
         .productList {
           width: 220px;
@@ -385,6 +389,7 @@
                 object-fit: cover;
               }
             }
+          
 
             .productList--body {
               background-color: white;
