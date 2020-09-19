@@ -1,5 +1,5 @@
 $(function(){
-  var buildFileField = (index)=> {
+  function buildFileField (index) {
     var html = `<div data-index="${index}" class="js-file_group">
                   <div class="image-previews" id="image_preview_${index}"></div>
                   <div class="file-field">
