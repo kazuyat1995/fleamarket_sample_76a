@@ -6,8 +6,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @images = Image.where(item_id: params[:id])
-    @images_first = Image.where(item_id: params[:id]).first
   end
 
   def confirm

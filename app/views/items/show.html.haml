@@ -11,14 +11,14 @@
         = @item.name
       %ul.product-image
         %li.product-image__top
-          = image_tag(@images_first.image.url, class: "img")
+          = image_tag(@item.images.first.image.url, class: "img")
           - if @item.stock.to_i == 0 
             .img__sold
               .img__sold__inner
                 Sold
         %li.product-image__bottom
           %ul.bottom-image
-            - @images.each do |img|
+            - @item.images.each do |img|
               %li.bottom-image__list
                 = image_tag(img.image.url, class: "img")
       .price-box
