@@ -8,21 +8,23 @@
   .detail-main__container
     .detail-main__container--product-box
       %h2.product-name
-        product
+        = @item.name
       %ul.product-image
         %li.product-image__top
-          = image_tag "img01.png", class: 'img'
+          = image_tag(@images_first.image.url, class: "img")
+          - if @item.stock.to_i == 0 
+            .img__sold
+              .img__sold__inner
+                Sold
         %li.product-image__bottom
           %ul.bottom-image
-            %li.bottom-image__left
-              = image_tag "img01.png", class: 'img'
-            %li.bottom-image__center
-              = image_tag "img02.png", class: 'img'
-            %li.bottom-image__right
-              = image_tag "img03.png", class: 'img'
+            - @images.each do |img|
+              %li.bottom-image__list
+                = image_tag(img.image.url, class: "img")
       .price-box
         %p.price-box__item-price
-          ￥30000
+          = @item.price.to_s(:delimited)
+          = "円"
         .price-box__item-fee
           %p.price-box__item-tax
             (税込)
@@ -75,8 +77,22 @@
           4-7日で発送
         
       .purchase
-        = link_to confirm_items_path , class: "purchase__buy-btn" do
-          商品購入画面へ
+        - if @item.stock.to_i == 0
+          = link_to root_path, class: "purchase__sold" do
+            売り切れました
+        
+        - elsif user_signed_in?
+          - if @item.seller_id == current_user.id
+            = link_to "商品の編集", "#", class: "purchase__edit"
+            = link_to "商品の削除", "#", class: "purchase__delete" 
+          - else
+            = link_to confirm_item_path , class: "purchase__buy-btn" do
+              商品購入画面へ
+        - else
+          %h1
+            ※ 商品購入にはログインが必要です
+
+          
     .detail-main__container--comment-box
       %textarea{placeholder: "コメントする", class: "comment-area"}
       %p.attention-text
