@@ -13,14 +13,14 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :show]
   resources :users, only: [:show, :edit]
 
-  resources :cards, only: [:new, :create, :destroy, :show] do
+  resources :cards, only: [:new, :create, :show] do
     collection do
-      get 'regist_done'
-      get 'delete_done'
+      get 'finished'
+      get 'completed'
+      post 'delete'
     end
     member do
-      get 'buy'
-      post 'pay'
+      post 'payment'
     end
   end
   
