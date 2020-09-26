@@ -3,148 +3,34 @@
   %ul
     - breadcrumb :user_display_lists
     = breadcrumbs separator: " &rsaquo; "
+
 .item__body
   .item__body__title
     商品出品一覧
   .item__body__lists
-    .item__body__lists__list
-      = link_to items_path do
-        %figure.list__img
-          = image_tag "img01.png"
-        .list__body
-          %h3.name
-            この料理は…
-          .list__body--wrapper
-            .list__price
-              %ul
-                %li
-                  1000円
-              %p  (税込)
-            .list-btn
-              = link_to "#" , class: "list-btn__edit" do
-                編集
+    - @items.each do |item|
+      .item__body__lists__list
+        = link_to items_path do
+          %figure.list__img
+            = image_tag item.images.first.image.url
+          .list__body
+            %p.name
+              = item.name
+            .list__body--wrapper
+              .list__price
+                %ul
+                  %li
+                    = item.price
+                  %li.unit
+                    円
+                %p
+                  (税込)
+              .list-btn
+                = link_to edit_item_path(item) , class: "list-btn__edit" do
+                  編集
 
-              = link_to confirm_deletion_users_path , class: "list-btn__delete" do
-                削除
-
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag = image_tag "img03.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__body--wrapper
-            .list__price
-              %ul
-                %li
-                  2000円
-              %p  (税込)
-            .list-btn
-              = link_to "#" , class: "list-btn__edit" do
-                編集
-
-              = link_to "#", class: "list-btn__delete" do
-                削除
-    
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag = image_tag "img02.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__body--wrapper
-            .list__price
-              %ul
-                %li
-                  3000円
-              %p  (税込)
-            .list-btn
-              = link_to "#" , class: "list-btn__edit" do
-                編集
-
-              = link_to "#", class: "list-btn__delete" do
-                削除
-
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag = image_tag "img02.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__body--wrapper
-            .list__price
-              %ul
-                %li
-                  4000円
-              %p  (税込)
-            .list-btn
-              = link_to "#" , class: "list-btn__edit" do
-                編集
-
-              = link_to "#", class: "list-btn__delete" do
-                削除
-    
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag = image_tag "img01.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__body--wrapper
-            .list__price
-              %ul
-                %li
-                  5000円
-              %p  (税込)
-            .list-btn
-              = link_to "#" , class: "list-btn__edit" do
-                編集
-
-              = link_to "#", class: "list-btn__delete" do
-                削除
-
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag = image_tag "img03.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__body--wrapper
-            .list__price
-              %ul
-                %li
-                  6000円
-              %p  (税込)
-            .list-btn
-              = link_to "#" , class: "list-btn__edit" do
-                編集
-
-              = link_to "#", class: "list-btn__delete" do
-                削除
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag = image_tag "img02.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__body--wrapper
-            .list__price
-              %ul
-                %li
-                  3000円
-              %p  (税込)
-            .list-btn
-              = link_to "#" , class: "list-btn__edit" do
-                編集
-
-              = link_to "#", class: "list-btn__delete" do
-                削除
+                = link_to confirm_deletion_user_path(item) , class: "list-btn__delete" do
+                  削除
 
 = render 'items/footer'
 = render 'items/sell-btn'

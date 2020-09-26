@@ -12,7 +12,9 @@ class UsersController < ApplicationController
 
   def sold_lists
   end
+
   def display_lists
+    @items = Item.includes(:images).where(seller_id: current_user.id).order('created_at DESC')
   end
 
   def confirm_deletion
