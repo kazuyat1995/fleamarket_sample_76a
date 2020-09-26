@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :cards, only: [:new, :create, :show] do
     collection do
       get 'finished'
-      get 'completed'
       post 'delete'
     end
     member do
