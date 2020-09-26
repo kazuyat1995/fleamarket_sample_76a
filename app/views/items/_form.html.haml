@@ -1,7 +1,7 @@
-= form_with(model: @items, local: true) do |f|
+= form_with(model: @item, local: true) do |f|
   .exhibit-main
     .exhibit-main__container
-      - if @items.id.present?
+      - if @item.id.present?
         .form-title
           商品情報編集ページ
       - else
@@ -20,7 +20,7 @@
             = f.fields_for :images do |image|
               %div{data:{index: "#{image.index}"},class: "js-file_group", id: "group_#{image.index}"}
                 %div{class: "image-previews", id: "image_preview_#{image.index}"}
-                  - if @items.id.present?
+                  - if @item.id.present?
                     = image_tag image.object.image.url, class: "image-preview"
                     = icon('fa', 'trash-alt', class: 'js-remove')
                 .file-field

@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = @items.seller
+    @user = @item.seller
   end
 
   def confirm
@@ -16,8 +16,8 @@ class ItemsController < ApplicationController
 
   def new
     if user_signed_in?
-      @items = Item.new
-      @items.images.new
+      @item = Item.new
+      @item.images.new
     else
       redirect_to root_path, flash: {notice: "商品の出品にはログインする必要があります"}
     end
@@ -27,8 +27,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @items = Item.new(item_params)
-    if @items.save
+    @item = Item.new(item_params)
+    if @item.save
       redirect_to display_lists_user_path(current_user.id), flash: {notice: "商品の出品が完了しました"}
     else
       render :new
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @items.update(update_item_params)
+    if @item.update(update_item_params)
       redirect_to display_lists_user_path, flash: {notice: "商品情報の編集が完了しました"}
     else
       render :edit
@@ -45,8 +45,7 @@ class ItemsController < ApplicationController
 
   private
     def set_item
-      @items = Item.find(params[:id])
-      # @item = Item.find(params[:id])
+      @item = Item.find(params[:id])
     end
 
     def item_params
