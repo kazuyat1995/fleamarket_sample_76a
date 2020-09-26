@@ -33,6 +33,11 @@
     background-color: white;
     width: 700px;
     padding: 14px 40px 40px;
+    .form-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 3px 0;
+    }
     // 出品画像
     .exhibit-image {
       &__header {
@@ -73,6 +78,9 @@
               .js-file {
                 font-size: 10px;
               }
+            }
+            .destroy {
+              display: none;
             }
           }
         }

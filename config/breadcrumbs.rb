@@ -28,24 +28,24 @@ end
 
 # マイページ
 crumb :mypage do
-  link "マイページ", users_path
+  link "マイページ", user_path(current_user)
 end
 
 # 商品出品一覧
 crumb :user_display_lists do
-  link "商品出品一覧", display_lists_users_path
+  link "商品出品一覧", display_lists_user_path
   parent :mypage
 end
 
 # 商品売却一覧
 crumb :user_sold_lists do
-  link "商品売却一覧", sold_lists_users_path
+  link "商品売却一覧", sold_lists_user_path
   parent :mypage
 end
 
 # 商品削除確認ページ
 crumb :confirm_deletion do
-  link "商品削除確認ページ", confirm_deletion_users_path
+  link "商品削除確認ページ", confirm_deletion_user_path
   parent :mypage
 end
 

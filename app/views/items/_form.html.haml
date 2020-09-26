@@ -1,0 +1,125 @@
+= form_with(model: @items, local: true) do |f|
+  .exhibit-main
+    .exhibit-main__container
+      - if @items.id.present?
+        .form-title
+          商品情報編集ページ
+      - else
+        .form-title
+          商品情報登録ページ
+      .exhibit-image
+        .exhibit-image__header
+          .tytle
+            出品画像
+          .required-mark
+            必須
+        .exhibit-image__content
+          .exhibit-image__content--explanation
+            出品する商品の画像を挿入してください(4枚まで)
+          #image-box
+            = f.fields_for :images do |image|
+              %div{data:{index: "#{image.index}"},class: "js-file_group", id: "group_#{image.index}"}
+                %div{class: "image-previews", id: "image_preview_#{image.index}"}
+                  - if @items.id.present?
+                    = image_tag image.object.image.url, class: "image-preview"
+                    = icon('fa', 'trash-alt', class: 'js-remove')
+                .file-field
+                  = image.file_field :image, class: "js-file", id: "item_images_attributes_#{image.index}_src", required: true
+                = image.hidden_field :id, value: image.object.id
+                = image.check_box :_destroy, data:{index: "#{image.index}"}, class: "destroy"
+
+      .exhibit-name
+        .exhibit-name__header
+          .tytle
+            商品名
+          .required-mark
+            必須
+        %div
+          = f.text_field :name, class: "exhibit-name__content", placeholder: "40字まで", maxlength: 40, required: true
+      .exhibit-detail
+        .exhibit-detail__header
+          .tytle
+            商品の説明
+          .required-mark
+            必須
+        %div
+          = f.text_area :detail, class: "exhibit-detail__text-box", placeholder: "色、素材、重さ、その他商品に関する注意点を記入してください(1000文字まで)", maxlength: 1000, required: true
+      -# .exhibit-category
+      -#   .exhibit-category__header
+      -#     .tytle
+      -#       カテゴリー
+      -#     .required-mark
+      -#       必須
+      -#   %div
+      -#     = f.select :category, Item.categories.keys, {prompt: "選択してください"}, class: "select-box", required: true
+      .exhibit-brand
+        .exhibit-brand__header
+          .tytle
+            ブランド
+        %div
+          = f.text_field :brand, class: "exhibit-brand__content",maxlength: 32, placeholder: "(例) シャネル"
+      .exhibit-condition
+        .exhibit-condition__header
+          .tytle
+            商品の状態
+          .required-mark
+            必須
+        %div
+          = f.select :condition, Item.conditions.keys, {prompt: "選択してください"}, class: "select-box", required: true
+      .exhibit-postage
+        .exhibit-postage__header
+          .tytle
+            配送料の負担
+          .required-mark
+            必須
+        %div
+          = f.select :postage, Item.postages.keys, {prompt: "選択してください"}, class: "select-box", required: true
+      .exhibit-address
+        .exhibit-address__header
+          .tytle
+            配送元の地域
+          .required-mark
+            必須
+        %div
+          = f.select :area, Item.areas.keys, {prompt: "選択してください"}, class: "select-box", required: true
+      .exhibit-shipping
+        .exhibit-shipping__header
+          .tytle
+            発送までの日数
+          .required-mark
+            必須
+        %div
+          = f.select :until_shipping, Item.until_shippings.keys, {prompt: "選択してください"}, class: "select-box", required: true
+      
+      .exhibit-price
+        .exhibit-price__header
+          .tytle
+            販売価格
+          .required-mark
+            必須
+        .exhibit-price__input-box
+          .price-unit
+            ¥
+          .price-content
+            = f.number_field :price, type: "number", min: "0", max: "9999999", class: "price-content__field",id: "retail-price", placeholder: "---", required: true
+
+        .exhibit-price__fee
+          .exhibit-price__fee--left-text
+            販売手数料(10％)
+          .exhibit-price__fee--right-content
+            .unit
+              ¥
+            #fee
+        .exhibit-price__profit
+          .exhibit-price__profit--left-text
+            販売利益
+          .exhibit-price__profit--right-content
+            .unit
+              ¥
+            #profit
+
+      .exhibit-box
+        = f.submit '出品する', class: 'exhibit-box__btn'
+
+      .attention-text
+        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。

@@ -21,7 +21,7 @@
 
     &__list{
       width: 220px;
-      height: 230px;
+      height: 250px;
       display: inline-block;
       
       position: relative;
@@ -58,10 +58,8 @@
       .list__body{
         color:#333;
         padding: 7px;
-        height: 90px;
-        width: 220px;
-        
-        h3{
+        .name{
+          width: 220px;
           overflow: hidden;
           line-height: 1.5;
           font-size: 16px;
@@ -69,19 +67,25 @@
           text-overflow: ellipsis;
           white-space: nowrap;
           color: black;
+
         }
         &--wrapper{
+          position: relative;
           display: flex;
           .list__price{
             font-size: 13px;
             color: #333333;
             width: 62px;
             ul{
+              display: flex;
               justify-content: space-between;
               list-style: none;
               font-size: 15px;
               li{
                 color: #333333;
+              }
+              .unit{
+                margin-left: 5px;
               }
             }
             p{
@@ -92,9 +96,11 @@
             }
           }
           .list-btn{
-            margin-left: 100px;
-            display: inline-block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
             &__edit {
+              display: block;
               width: 50px;
               color: #3ccace;
               font-size: 14px;
@@ -103,6 +109,7 @@
               
             }
             &__delete{
+              display: block;
               width: 50px;
               color: red;
               font-size: 14px;
