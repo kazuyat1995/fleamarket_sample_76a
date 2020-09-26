@@ -3,10 +3,10 @@
   .back-page
     .back-page__content
       %p.back-page__text
-        登録が完了しました
+        購入手続きが完了しました
       .back-page__link
         .back-mypage
-          = link_to card_path(current_user), class: "back-mypage__link" do
+          = link_to user_path(current_user), class: "back-mypage__link" do
             %span.back-mypage__link-btn
               マイページへ戻る
           .back-top

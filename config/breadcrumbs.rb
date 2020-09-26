@@ -10,7 +10,7 @@ end
 
 # 商品購入ページ
 crumb :confirm do
-  link "商品購入ページ", confirm_items_path
+  link "商品購入ページ", confirm_item_path
   parent :show
 end
 

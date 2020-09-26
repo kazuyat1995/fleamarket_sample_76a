@@ -1,11 +1,15 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.includes(:images).order ('created_at DESC')
+    @items_price = Item.includes(:images).order('price ASC')
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def confirm
+    @item = Item.find(params[:id])
   end
 
   def new

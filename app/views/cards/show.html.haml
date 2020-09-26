@@ -6,21 +6,20 @@
       %h2.payment__head 
         支払い方法
       .payment__main
-        .payment__list
-          %h3.payment__list__head 
-            クレジットカード一覧
         .payment__cards
           %form.payment__cards__content
           .payment__cards__list
-            %figure
+            %figure.payment__cards__list-img
               = image_tag "#{@card_src}", size: "40x30", alt: @card_brand, id: "card_image"
           .payment__cards__number 
             = "**** **** **** " + @card_information.last4
-          .payment__cards__exp
-            - exp_month = @card_information.exp_month.to_s
-            - exp_year = @card_information.exp_year.to_s.slice(2,3)
-            = exp_month + " / " + exp_year
-          = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-            %input{ type: "hidden", name: "card_id", value: "" }
-            %button.delete__button 削除する
+            .payment__cards__exp
+              - exp_month = @card_information.exp_month.to_s
+              - exp_year = @card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+          .delete-card
+            = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %button.delete-card__btn 削除する
 = render 'items/footer'
+= render 'items/sell-btn'

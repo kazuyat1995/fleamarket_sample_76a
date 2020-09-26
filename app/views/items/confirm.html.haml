@@ -67,8 +67,7 @@
         %div
           (税込)
 
-    = form_with url: "#", class: "confirm-main__container--buy-box" do |f|
+    = form_with url: payment_card_path, local: true, class: "confirm-main__container--buy-box" do |f|
       = f.submit '購入する', class:"buy-btn"
- 
 
 = render partial: 'footer'

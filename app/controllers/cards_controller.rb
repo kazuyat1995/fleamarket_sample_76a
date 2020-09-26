@@ -1,8 +1,8 @@
 class CardsController < ApplicationController
   require 'payjp'
   before_action :move_to_root
-  before_action :set_card, only: [:new, :show, :delete, :buy, :pay]
-  before_action :set_payjp_key, only: [:new, :show, :delete, :buy, :pay]
+  before_action :set_card, only: [:new, :show, :delete, :buy, :payment]
+  before_action :set_payjp_key, only: [:new, :show, :delete, :completed, :payment]
   before_action :set_item, only: [:payment]
 
   def new
@@ -76,7 +76,8 @@ class CardsController < ApplicationController
       customer: customer,
       currency: 'jpy'
       )
-      @item.update!(stock: "売却済")
+      @item.update!(stock: 0)
+      @item.update!(buyer_id: current_user.id)
     else
       render action: :completed
     end
