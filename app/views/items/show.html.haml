@@ -32,49 +32,42 @@
             送料込み
       .item-detail
         %p
-          <商品の状態について>
-        %p
-          写真はイメージです。
+          = @items.detail
       .item-property
         .item-property__column1
           出品者
         .item-property__column2
-          hoge
-      .item-property
-        .item-property__column1
-          カテゴリー
-        .item-property__column2
-          メンズ
+          = @user.nickname
+      -# .item-property
+      -#   .item-property__column1
+      -#     カテゴリー
+      -#   .item-property__column2
+      -#     メンズ
       .item-property
         .item-property__column1
           ブランド
         .item-property__column2
-          不明
-      .item-property
-        .item-property__column1
-          商品サイズ
-        .item-property__column2
-          不明
+          = @items.brand
       .item-property
         .item-property__column1
           商品の状態
         .item-property__column2
-          未使用に近い
+          = @items.condition
       .item-property
         .item-property__column1
           配送料の負担
         .item-property__column2
-          送料込み(出品者の負担)
+          = @items.postage
       .item-property
         .item-property__column1
           発送元の地域
         .item-property__column2
-          岩手県
+          = @items.area
       .item-property
         .item-property__column1
           発送日の目安
         .item-property__column2
-          4-7日で発送
+          = @items.until_shipping
         
       .purchase
         - if @items.stock.to_i == 0
@@ -83,7 +76,7 @@
         
         - elsif user_signed_in?
           - if @items.seller_id == current_user.id
-            = link_to "商品の編集", "#", class: "purchase__edit"
+            = link_to "商品の編集", edit_item_path, class: "purchase__edit"
             = link_to "商品の削除", "#", class: "purchase__delete" 
           - else
             = link_to confirm_item_path , class: "purchase__buy-btn" do

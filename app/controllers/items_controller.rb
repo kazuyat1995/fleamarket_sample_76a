@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @user = @items.seller
   end
 
   def confirm
