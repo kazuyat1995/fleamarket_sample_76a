@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+before_action :set_item, only: [:edit, :update]
   def index
   end
 
@@ -18,7 +19,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @items = Item.find(params[:id])
   end
 
   def create
@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @items = Item.find(params[:id])
     if @items.update(update_item_params)
       redirect_to display_lists_user_path, flash: {notice: "商品情報の編集が完了しました"}
     else
@@ -40,6 +39,10 @@ class ItemsController < ApplicationController
   end
 
   private
+    def set_item
+      @items = Item.find(params[:id])
+    end
+
     def item_params
       params.require(:item).permit(:name, :detail, :brand, :condition, :postage, :area, :until_shipping, :price, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
     end
