@@ -10,19 +10,33 @@ class ItemsController < ApplicationController
 
   def new
     if user_signed_in?
-      @item = Item.new
-      @item.images.new
+      @items = Item.new
+      @items.images.new
     else
       redirect_to root_path, flash: {notice: "商品の出品にはログインする必要があります"}
     end
   end
 
+  def edit
+    @items = Item.find(params[:id])
+  end
+
   def create
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path, flash: {notice: "商品の出品が完了しました"}
+    @items = Item.new(item_params)
+    if @items.save
+      redirect_to display_lists_user_path(current_user.id), flash: {notice: "商品の出品が完了しました"}
     else
       render :new
+    end
+  end
+
+  def update
+    # binding.pry
+    @items = Item.find(params[:id])
+    if @items.update(update_item_params)
+      redirect_to display_lists_user_path, flash: {notice: "商品情報の編集が完了しました"}
+    else
+      render :edit
     end
   end
 
@@ -31,5 +45,8 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:name, :detail, :brand, :condition, :postage, :area, :until_shipping, :price, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
     end
 
+    def update_item_params
+      params.require(:item).permit(:name, :detail, :brand, :condition, :postage, :area, :until_shipping, :price, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
+    end
 
 end
