@@ -21,7 +21,7 @@
                 = icon('fas','angle-right')
       %li.user-navi__menu__list
         .user-navi__menu__list__item
-          = link_to display_lists_user_path, class: "list-table" do
+          = link_to display_lists_user_path(current_user), class: "list-table" do
             .list-table__branch
               %span.list-table__branch__name
                 商品出品一覧
@@ -29,7 +29,7 @@
                 = icon('fas','angle-right')
       %li.user-navi__menu__list
         .user-navi__menu__list__item
-          = link_to sold_lists_user_path, class: "list-table" do
+          = link_to sold_lists_user_path(current_user), class: "list-table" do
             .list-table__branch
               %span.list-table__branch__name
                 商品売却一覧
