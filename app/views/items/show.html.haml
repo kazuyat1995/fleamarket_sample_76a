@@ -8,22 +8,22 @@
   .detail-main__container
     .detail-main__container--product-box
       %h2.product-name
-        = @items.name
+        = @item.name
       %ul.product-image
         %li.product-image__top
-          = image_tag(@items.images.first.image.url, class: "img")
-          - if @items.stock.to_i == 0 
+          = image_tag(@item.images.first.image.url, class: "img")
+          - if @item.stock.to_i == 0 
             .img__sold
               .img__sold__inner
                 Sold
         %li.product-image__bottom
           %ul.bottom-image
-            - @items.images.each do |img|
+            - @item.images.each do |img|
               %li.bottom-image__list
                 = image_tag(img.image.url, class: "img")
       .price-box
         %p.price-box__item-price
-          = @items.price.to_s(:delimited)
+          = @item.price.to_s(:delimited)
           = "円"
         .price-box__item-fee
           %p.price-box__item-tax
@@ -32,58 +32,51 @@
             送料込み
       .item-detail
         %p
-          <商品の状態について>
-        %p
-          写真はイメージです。
+          = @item.detail
       .item-property
         .item-property__column1
           出品者
         .item-property__column2
-          hoge
-      .item-property
-        .item-property__column1
-          カテゴリー
-        .item-property__column2
-          メンズ
+          = @user.nickname
+      -# .item-property
+      -#   .item-property__column1
+      -#     カテゴリー
+      -#   .item-property__column2
+      -#     メンズ
       .item-property
         .item-property__column1
           ブランド
         .item-property__column2
-          不明
-      .item-property
-        .item-property__column1
-          商品サイズ
-        .item-property__column2
-          不明
+          = @item.brand
       .item-property
         .item-property__column1
           商品の状態
         .item-property__column2
-          未使用に近い
+          = @item.condition
       .item-property
         .item-property__column1
           配送料の負担
         .item-property__column2
-          送料込み(出品者の負担)
+          = @item.postage
       .item-property
         .item-property__column1
           発送元の地域
         .item-property__column2
-          岩手県
+          = @item.area
       .item-property
         .item-property__column1
           発送日の目安
         .item-property__column2
-          4-7日で発送
+          = @item.until_shipping
         
       .purchase
-        - if @items.stock.to_i == 0
+        - if @item.stock.to_i == 0
           = link_to root_path, class: "purchase__sold" do
             売り切れました
         
         - elsif user_signed_in?
-          - if @items.seller_id == current_user.id
-            = link_to "商品の編集", "#", class: "purchase__edit"
+          - if @item.seller_id == current_user.id
+            = link_to "商品の編集", edit_item_path, class: "purchase__edit"
             = link_to "商品の削除", "#", class: "purchase__delete" 
           - else
             = link_to confirm_item_path , class: "purchase__buy-btn" do
