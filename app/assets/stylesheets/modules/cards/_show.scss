@@ -1,0 +1,52 @@
+.payment {
+  float: right;
+  width: 700px;
+  background-color: whitesmoke;
+
+  &__head {
+    color: #4e5863;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 55px;
+    text-align: center;
+    border-bottom: 1px #333 solid;
+    padding: 16px 32px;
+  }
+
+  &__main {
+    padding: 32px 32px 32px 48px;
+  }
+
+  &__cards {
+    display: flex;
+
+    &__list-img {
+      float: left;
+    }
+
+    &__number {
+      font-size: 17px;
+    }
+
+    &__exp {
+      font-size: 14px;
+      margin-top: 4px;
+    }
+  }
+}
+
+.delete-card {
+  margin-left: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__btn {
+    background-color: red;
+    border-radius: 4px;
+    border-style: none;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+  }
+}

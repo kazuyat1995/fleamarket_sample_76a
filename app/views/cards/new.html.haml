@@ -22,6 +22,7 @@
                     = image_tag "card/JCB.png", size: "40x30", class: 'credit_logo'
                     = image_tag "card/amex.svg", size: "40x30", class: 'credit_logo'
                     = image_tag "card/Diners.png", size: "40x30", class: 'credit_logo'
+                    = image_tag "card/Discover.png", size: "40x30", class: 'credit_logo'
             .expiration-date
               .expiration-date__text
                 有効期限
@@ -37,7 +38,7 @@
                 = f.text_field :security_code, placeholder: "カード背面４桁もしくは３桁の番号", maxlength: "4", id: "cvc", class: "security-code__form__input"
             = f.submit "追加する", class: "submit-btn", id: "charge_form"
             .test-card
-              = link_to "https://pay.jp/docs/testcard", class: "test-card-link" do
+              = link_to "https://pay.jp/docs/testcard", class: "test-card-link", target: :_blank, rel: :noopener do
                 %span.test-card
-                  テストカード
+                  テストカード(外部サイトへ移動します)
 = render 'items/footer'

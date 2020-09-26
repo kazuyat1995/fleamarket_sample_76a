@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :confirm]
+
 before_action :set_item, only: [:edit, :update]
   def index
     @items = Item.includes(:images).order ('created_at DESC')
@@ -6,7 +8,6 @@ before_action :set_item, only: [:edit, :update]
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def confirm
@@ -49,6 +50,9 @@ before_action :set_item, only: [:edit, :update]
     def item_params
       params.require(:item).permit(:name, :detail, :brand, :condition, :postage, :area, :until_shipping, :price, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
     end
+    
+    def set_item
+      @item = Item.find(params[:id])
 
     def update_item_params
       params.require(:item).permit(:name, :detail, :brand, :condition, :postage, :area, :until_shipping, :price, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)

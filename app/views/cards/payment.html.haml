@@ -1,0 +1,16 @@
+= render 'items/header'
+.back
+  .back-page
+    .back-page__content
+      %p.back-page__text
+        購入手続きが完了しました
+      .back-page__link
+        .back-mypage
+          = link_to user_path(current_user), class: "back-mypage__link" do
+            %span.back-mypage__link-btn
+              マイページへ戻る
+          .back-top
+            = link_to root_path(current_user), class: "back-top__link" do
+              %span.back-top__link-btn
+                トップページへ戻る
+= render 'items/footer'

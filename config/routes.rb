@@ -11,14 +11,13 @@ Rails.application.routes.draw do
 
   root to: 'items#index'
 
-  resources :cards, only: [:new, :create, :destroy, :show] do
+  resources :cards, only: [:new, :create, :show] do
     collection do
-      get 'regist_done'
-      get 'delete_done'
+      get 'finished'
+      post 'delete'
     end
     member do
-      get 'buy'
-      post 'pay'
+      post 'payment'
     end
   end
   
