@@ -5,12 +5,12 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :detail, null: false
       # t.references :category, null:false, foreign_key:true
       t.string :brand
-      t.string :condition, null: false
+      t.integer :condition, null: false
       t.integer :postage, null: false
-      t.string :area, null: false
+      t.integer :area, null: false
       t.integer :until_shipping, null: false
       t.integer :price, null: false
-      t.string :stock
+      t.integer :stock
       t.references :seller
       t.references :buyer
       t.timestamps

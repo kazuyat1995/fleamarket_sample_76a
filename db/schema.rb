@@ -67,12 +67,12 @@ ActiveRecord::Schema.define(version: 2020_08_29_015230) do
     t.string "name", null: false
     t.string "detail", null: false
     t.string "brand"
-    t.string "condition", null: false
+    t.integer "condition", null: false
     t.integer "postage", null: false
-    t.string "area", null: false
+    t.integer "area", null: false
     t.integer "until_shipping", null: false
     t.integer "price", null: false
-    t.string "stock", default: "1"
+    t.integer "stock", default: 1
     t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "created_at", null: false
