@@ -1,8 +1,8 @@
 class CardsController < ApplicationController
   require 'payjp'
   before_action :move_to_root
-  before_action :set_card, only: [:new, :show, :delete, :buy, :payment]
-  before_action :set_payjp_key, only: [:new, :show, :delete, :completed, :payment]
+  before_action :set_card, only: [:new, :show, :delete, :payment]
+  before_action :set_payjp_key, only: [:new, :show, :delete, :payment]
   before_action :set_item, only: [:payment]
 
   def new
@@ -53,7 +53,7 @@ class CardsController < ApplicationController
     when "Diners Club"
       @card_src = "card/Diners.png"
     when "Discover"
-      @card_src = "card/Discover.png"
+      @card_src = "card/discover.png"
     end
   end
 
@@ -79,7 +79,7 @@ class CardsController < ApplicationController
       @item.update!(stock: 0)
       @item.update!(buyer_id: current_user.id)
     else
-      render action: :completed
+      render action: :new, flash: {notice: "支払い方法を登録してください"}
     end
   end
 
