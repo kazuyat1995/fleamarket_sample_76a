@@ -115,16 +115,20 @@
       .purchase {
         width: 100%;
         margin-top: 40px;
-        padding-left: 180px;
-        &__buy-btn, &__new__login, &__sold {
+        // padding-left: 180px;
+        &__buy-btn, &__sold {
           display: block;
           text-align: center;
-          width: 150px;
+          width: 300px;
           height: 50px;
           line-height: 50px;
           color: white;
           background-color: #3ccace;
           text-decoration: none;
+          margin-left: 160px;
+        }
+        &__sold {
+          background-color: red;
         }
         &__edit {
           background-color: #3ccace;
@@ -153,6 +157,7 @@
           color: red;
           margin-top: 90px;
           font-size: 22px;
+          text-align: center;
         }
       }
     }

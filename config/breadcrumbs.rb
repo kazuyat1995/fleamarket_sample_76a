@@ -5,7 +5,7 @@ end
 
 # 商品詳細ページ
 crumb :show do
-  link "商品詳細ページ", items_path
+  link "商品詳細ページ", item_path
 end
 
 # 商品購入ページ
