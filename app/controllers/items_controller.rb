@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
     @items = Item.find(params[:id])
     if @items.update(update_item_params)
       redirect_to display_lists_user_path, flash: {notice: "商品情報の編集が完了しました"}
