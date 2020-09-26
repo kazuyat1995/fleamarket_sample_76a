@@ -8,22 +8,22 @@
   .detail-main__container
     .detail-main__container--product-box
       %h2.product-name
-        = @item.name
+        = @items.name
       %ul.product-image
         %li.product-image__top
-          = image_tag(@item.images.first.image.url, class: "img")
-          - if @item.stock.to_i == 0 
+          = image_tag(@items.images.first.image.url, class: "img")
+          - if @items.stock.to_i == 0 
             .img__sold
               .img__sold__inner
                 Sold
         %li.product-image__bottom
           %ul.bottom-image
-            - @item.images.each do |img|
+            - @items.images.each do |img|
               %li.bottom-image__list
                 = image_tag(img.image.url, class: "img")
       .price-box
         %p.price-box__item-price
-          = @item.price.to_s(:delimited)
+          = @items.price.to_s(:delimited)
           = "円"
         .price-box__item-fee
           %p.price-box__item-tax
@@ -77,12 +77,12 @@
           4-7日で発送
         
       .purchase
-        - if @item.stock.to_i == 0
+        - if @items.stock.to_i == 0
           = link_to root_path, class: "purchase__sold" do
             売り切れました
         
         - elsif user_signed_in?
-          - if @item.seller_id == current_user.id
+          - if @items.seller_id == current_user.id
             = link_to "商品の編集", "#", class: "purchase__edit"
             = link_to "商品の削除", "#", class: "purchase__delete" 
           - else
