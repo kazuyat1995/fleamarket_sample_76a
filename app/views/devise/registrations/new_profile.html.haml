@@ -17,19 +17,19 @@
               = f.label :お名前
               %span.profile-group__require 必須
               %br
-              = f.text_field :family_name, {placeholder:"例) 山田",class:'profile-group__input--left'}
-              = f.text_field :first_name, {placeholder:"例) 太郎",class:'profile-group__input--left'}
+              = f.text_field :family_name, {placeholder:"例) 山田",class:'profile-group__input--left', required: true}
+              = f.text_field :first_name, {placeholder:"例) 太郎",class:'profile-group__input--left', required: true}
             .profile-group
               = f.label :お名前カナ
               %span.profile-group__require 必須
               %br
-              = f.text_field :family_name_kana, {placeholder:"例) ヤマダ",class:'profile-group__input--left'}
-              = f.text_field :first_name_kana, {placeholder:"例) タロウ",class:'profile-group__input--left'}
+              = f.text_field :family_name_kana, {placeholder:"例) ヤマダ",class:'profile-group__input--left', required: true}
+              = f.text_field :first_name_kana, {placeholder:"例) タロウ",class:'profile-group__input--left', required: true}
             .profile-group
               = f.label :生年月日
               %span.profile-group__require 必須
               %br
-              = f.date_select :birthday, { use_month_numbers:true, prompt:"--", end_year:1900, class:'profile-group__input--half'}
+              = f.date_select :birthday, { use_month_numbers:true, prompt:"--", end_year:1900, class:'profile-group__input--half', required: true}
             .profile-group
               = f.submit '次へ', class: "profile-btn"
 

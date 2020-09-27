@@ -16,18 +16,18 @@
             .form-group
               = f.label :ニックネーム
               %span.form-group__require 必須
-              = f.text_field :nickname, {placeholder: " 例) 山ちゃん",class:'form-group__input'}
+              = f.text_field :nickname, {placeholder: " 例) 山ちゃん",class:'form-group__input', required: true}
             .form-group
               = f.label :メールアドレス
               %span.form-group__require 必須
-              = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: " PC・携帯どちらでも可",class:'form-group__input'}
+              = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: " PC・携帯どちらでも可",class:'form-group__input', required: true}
             .form-group
               = f.label :パスワード
               %span.form-group__require 必須
-              = f.password_field :password,{autocomplete: "new-password",placeholder: " 7文字以上",class:'form-group__input',id:"password"}
+              = f.password_field :password,{autocomplete: "new-password",placeholder: " 7文字以上",class:'form-group__input',id:"password", required: true}
             .form-group
               = f.label :パスワード確認用 
               %span.form-group__require 必須
-              = f.password_field :password_confirmation,{autocomplete: "new-password",placeholder: " 7文字以上",class:'form-group__input',id:"password"}
+              = f.password_field :password_confirmation,{autocomplete: "new-password",placeholder: " 7文字以上",class:'form-group__input',id:"password", required: true}
             .form-group
               = f.submit '次へ', class: "btn-next"
