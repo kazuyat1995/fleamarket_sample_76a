@@ -102,7 +102,7 @@
       .productLists
         .productList
           - @items.each do |item| 
-            = link_to item_path(id: item.id), class: "productList__imgs" do
+            = link_to item_path(item), class: "productList__imgs" do
               .productList__wrapper
                 %figure.productList--img
                   = image_tag item.images.first.image.url
@@ -137,7 +137,7 @@
       .productLists
         .productList
           - @items_price.each do |item| 
-            = link_to item_path(id: item.id), class: "productList__imgs" do
+            = link_to item_path(item), class: "productList__imgs" do
               .productList__wrapper
                 %figure.productList--img
                   = image_tag item.images.first.image.url

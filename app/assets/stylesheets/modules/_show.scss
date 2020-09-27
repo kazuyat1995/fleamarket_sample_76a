@@ -8,7 +8,7 @@
     width: 700px;
     &--product-box {
       background-color: white;
-      height: 1300px;
+      height: 1250px;
       padding: 20px 40px 0 40px;
       margin-bottom: 20px;
       .product-name {
@@ -22,7 +22,6 @@
         
         &__top {
           display: inline-block;
-          margin: 5px;
           position: relative;
           .img {
             height: 360px;
@@ -34,7 +33,7 @@
               border-right: 50px solid transparent;
               border-bottom: 50px solid transparent;
               border-left: 50px solid red;
-              z-index:100;
+              z-index:1;
               position: absolute;
               top: 0px;
               left: 0px;
@@ -53,13 +52,17 @@
           height: 90px;
           width: 560px;
           .bottom-image {
+            width: 100%;
             display: flex;
             justify-content: center;
             &__list{
               height: 100px;
-              object-fit: cover;
+              width: 24%;
+              margin-right: 1px;
               img{
                 height: 100px;
+                width: 133px;
+                object-fit: cover;
               }
             }
           }
@@ -140,6 +143,7 @@
           text-align: center;
           border-radius: 100px;
           font-size: 18px;
+          margin-left: 180px;
         }
         &__delete{
           margin-top: 20px;
@@ -152,6 +156,7 @@
           text-align: center;
           border-radius: 100px;
           font-size: 18px;
+          margin-left: 180px;
         }
         h1{
           color: red;
