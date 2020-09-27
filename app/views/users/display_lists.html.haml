@@ -13,6 +13,10 @@
         = link_to item_path(item) do
           %figure.list__img
             = image_tag item.images.first.image.url
+            - if item.stock.to_i == 0
+              .sold-label
+              .sold-label__inner
+                sold
           .list__body
             %p.name
               = item.name
@@ -26,11 +30,15 @@
                 %p
                   (税込)
               .list-btn
-                = link_to edit_item_path(item) , class: "list-btn__edit" do
-                  編集
-
-                = link_to confirm_deletion_user_path(item) , class: "list-btn__delete" do
-                  削除
+                - if item.stock.to_i == 1
+                  = link_to edit_item_path(item) , class: "list-btn__edit" do
+                    編集
+                  = link_to confirm_deletion_user_path(item) , class: "list-btn__delete" do
+                    削除
+                - else
+                  = link_to confirm_deletion_user_path(item) , class: "list-btn__delete" do
+                    削除
+                
 
 = render 'items/footer'
 = render 'items/sell-btn'
