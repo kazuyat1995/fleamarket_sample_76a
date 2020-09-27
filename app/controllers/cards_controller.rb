@@ -70,8 +70,9 @@ class CardsController < ApplicationController
   end
 
   def payment
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    if Payjp::Charge.create(
+    if @card.present?
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      Payjp::Charge.create(
       amount: @item.price,
       customer: customer,
       currency: 'jpy'
@@ -79,7 +80,8 @@ class CardsController < ApplicationController
       @item.update!(stock: 0)
       @item.update!(buyer_id: current_user.id)
     else
-      render action: :new, flash: {notice: "支払い方法を登録してください"}
+      flash.now[:alert] = '支払い方法を登録してください'
+      render action: :new
     end
   end
 
@@ -106,4 +108,5 @@ class CardsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
 end
