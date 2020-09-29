@@ -100,7 +100,6 @@
           display: flex;
 
           a {
-
             color: black;
             text-decoration: none;
             display: block;
@@ -141,11 +140,15 @@
         height: 2rem;
         justify-items: right;
 
+        .right-item1{
+          font-style: oblique;
+        }
         .right-item1,
+        .right-item2,
         .right-item3,
         .right-item4 {
           color: black;
-          line-height: 38px;
+          line-height: 32px;
           padding: 0 0 0 16px;
 
           a {
@@ -154,8 +157,10 @@
             color: black;
             text-decoration: none;
             line-height: 32px;
+            height: 32px;
           }
         }
+        
       }
     }
   }
