@@ -85,7 +85,6 @@
     }
 
     &__bottom {
-      text-decoration: none;
       font-size: 15px;
       display: flex;
       margin-bottom: 10px;
@@ -100,9 +99,7 @@
           display: flex;
 
           a {
-
             color: black;
-            text-decoration: none;
             display: block;
             line-height: 2rem;
             width: 100%;
@@ -127,8 +124,6 @@
           height: 2rem;
           line-height: 2rem;
           text-align: center;
-          text-decoration: none;
-
           i {
             color: #3ccace;
           }
@@ -141,21 +136,26 @@
         height: 2rem;
         justify-items: right;
 
+        .right-item1{
+          font-style: oblique;
+        }
         .right-item1,
+        .right-item2,
         .right-item3,
         .right-item4 {
           color: black;
-          line-height: 38px;
+          line-height: 32px;
           padding: 0 0 0 16px;
 
           a {
             display: flex;
             align-items: center;
             color: black;
-            text-decoration: none;
             line-height: 32px;
+            height: 32px;
           }
         }
+        
       }
     }
   }
@@ -180,7 +180,6 @@
     .breadcrumbs {
       a {
         font-size: 18px;
-        text-decoration: none;
         color: gray;
       }
 
@@ -196,7 +195,6 @@
   background-color: rgb(34, 34, 34);
   color: white;
   padding: 40px 0;
-  // position: fixed;
   bottom: 0;
   width: 100%;
 
@@ -221,7 +219,6 @@
         ul {
           a {
             color: white;
-            text-decoration: none;
             font-size: 12px;
             line-height: 38px;
           }

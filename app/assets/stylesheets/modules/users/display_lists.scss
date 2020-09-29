@@ -31,7 +31,6 @@
       a{
         background-color: #fff;
         display: inline-block;
-        text-decoration: none;
         position: relative;
 
         figure{
@@ -43,15 +42,38 @@
           z-index: auto;
 
           img{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // right: 0;
+            // bottom: 0;
             width: 100%;
             z-index: auto;
             height: 150px;
             object-fit: cover;
+          }
+          .sold-label {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            border-top: 36px solid red;
+            border-right: 36px solid transparent;
+            border-bottom: 36px solid transparent;
+            border-left: 36px solid red;
+          }
+          .sold-label__inner {
+            position: absolute;
+            z-index: 1;
+            top: 12px;
+            left: 0;
+            color: #fff;
+            transform: rotate(-45deg);
+            font-size: 20px;
+            letter-spacing: 2px;
+            font-weight: bold;
           }
         }
       }

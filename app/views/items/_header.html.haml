@@ -24,6 +24,8 @@
       %ul.right-items
         - if user_signed_in?
           %li.right-item1
+            = "ようこそ #{current_user.nickname}さん"
+          %li.right-item2
             = link_to user_path(current_user) do
               マイページ
         - else
