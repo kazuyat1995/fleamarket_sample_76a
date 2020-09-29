@@ -5,7 +5,7 @@
         %figure#user-icon
           = image_tag "member_photo_noimage_thumb.png", size: "60x60", alt: "アイコン"
         %h2.user-nickname
-          ニックネーム
+          = current_user.nickname
         .mypage-number
           .mypage-number__table
             評価
