@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :confirm, :edit, :update]
+  before_action :set_item, only: [:show, :confirm, :edit, :update, :destroy]
   before_action :set_seller, only: [:show, :confirm]
 
 # before_action :set_item, only: []
@@ -44,9 +44,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-      if item.seller_id == current_user.id
-        item.destroy
+      if @item.seller_id == current_user.id
+        @item.destroy
         redirect_to display_lists_user_path(current_user.id), flash: {notice: "商品を削除しました"}
       end
   end
