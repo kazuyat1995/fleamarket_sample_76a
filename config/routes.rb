@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items, only: [:show, :new, :edit, :create, :update] do
+  resources :items do
     member do
       get 'confirm'
     end

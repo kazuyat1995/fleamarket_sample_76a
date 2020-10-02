@@ -77,7 +77,7 @@
         - elsif user_signed_in?
           - if @item.seller_id == current_user.id
             = link_to "商品の編集", edit_item_path, class: "purchase__edit"
-            = link_to "商品の削除", "#", class: "purchase__delete" 
+            = link_to "商品の削除", confirm_deletion_user_path , class: "purchase__delete" 
           - else
             = link_to confirm_item_path , class: "purchase__buy-btn" do
               商品購入画面へ

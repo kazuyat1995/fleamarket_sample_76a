@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   end
 
   def confirm_deletion
+    @item = Item.find(params[:id])
+    @user = @item.seller
   end
 
   def confirm_edit

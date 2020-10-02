@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :confirm, :edit, :update]
+  before_action :set_seller, only: [:show, :confirm]
 
 # before_action :set_item, only: []
   def index
@@ -8,7 +9,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = @item.seller
   end
 
   def confirm
@@ -43,9 +43,21 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    item = Item.find(params[:id])
+      if item.seller_id == current_user.id
+        item.destroy
+        redirect_to display_lists_user_path(current_user.id), flash: {notice: "商品を削除しました"}
+      end
+  end
+
   private
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def set_seller
+      @user = @item.seller
     end
 
     def item_params
