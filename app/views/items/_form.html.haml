@@ -97,11 +97,14 @@
             販売価格
           .required-mark
             必須
+
+        .exhibit-price__text
+          ※50 〜 9,999,999円まで設定可能です
         .exhibit-price__input-box
           .price-unit
             ¥
           .price-content
-            = f.number_field :price, type: "number", min: "0", max: "9999999", class: "price-content__field",id: "retail-price", placeholder: "---", required: true
+            = f.number_field :price, type: "number", min: "50", max: "9999999", class: "price-content__field",id: "retail-price", placeholder: "---", required: true
 
         .exhibit-price__fee
           .exhibit-price__fee--left-text
