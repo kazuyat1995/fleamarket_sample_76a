@@ -3,7 +3,6 @@ class CardsController < ApplicationController
   before_action :move_to_root
   before_action :set_card, only: [:new, :show, :delete, :payment]
   before_action :set_payjp_key, only: [:new, :show, :delete, :payment]
-  before_action :set_item, only: [:payment]
 
   def new
     if @card.present?
@@ -71,6 +70,7 @@ class CardsController < ApplicationController
   end
 
   def payment
+    @item = Item.find(params[:id])
     if @card.present?
       customer = Payjp::Customer.retrieve(@card.customer_id)
       Payjp::Charge.create(
@@ -101,9 +101,4 @@ class CardsController < ApplicationController
   def set_payjp_key
     Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
   end
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
 end
