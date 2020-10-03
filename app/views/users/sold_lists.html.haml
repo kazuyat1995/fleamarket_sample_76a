@@ -6,55 +6,15 @@
 
 .item__body
   .item__body__title
-    商品売却一覧
-  .item__body__lists
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag "img01.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__price
-            %ul
-              %li
-                1000円
-            %p  (税込)
-          .list__sold
-            .list__sold__inner
-              sold
+    商品購入履歴
+  
+  - if @items.present?  
+    = render 'users/lists'
+  - else
+    .none_lists
+      購入済みの商品はありません
+                
 
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag "img02.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__price
-            %ul
-              %li
-                2000円
-            %p  (税込)
-          .list__sold
-            .list__sold__inner
-              sold
-
-    .item__body__lists__list
-      = link_to "#" do
-        %figure.list__img
-          = image_tag "img03.png"
-        .list__body
-          %h3.name
-            この鍋は…
-          .list__price
-            %ul
-              %li
-                3000円
-            %p  (税込)
-          .list__sold
-            .list__sold__inner
-              sold
 
 = render 'items/footer'
 = render 'items/sell-btn'

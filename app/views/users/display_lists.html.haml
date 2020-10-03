@@ -7,38 +7,9 @@
 .item__body
   .item__body__title
     商品出品一覧
+  
   - if @items.present?  
-    .item__body__lists
-      - @items.each do |item|
-        .item__body__lists__list
-          = link_to item_path(item) do
-            %figure.list__img
-              = image_tag item.images.first.image.url
-              - if item.stock.to_i == 0
-                .sold-label
-                .sold-label__inner
-                  sold
-            .list__body
-              %p.name
-                = item.name
-              .list__body--wrapper
-                .list__price
-                  %ul
-                    %li
-                      = item.price
-                    %li.unit
-                      円
-                  %p
-                    (税込)
-                .list-btn
-                  - if item.stock.to_i == 1
-                    = link_to edit_item_path(item) , class: "list-btn__edit" do
-                      編集
-                    = link_to confirm_deletion_user_path(item) , class: "list-btn__delete" do
-                      削除
-                  - else
-                    = link_to confirm_deletion_user_path(item) , class: "list-btn__delete" do
-                      削除
+    = render 'users/lists'
   - else
     .none_lists
       出品中の商品はありません
