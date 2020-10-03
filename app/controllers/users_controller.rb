@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def sold_lists
+    @items = Item.includes(:images).where(buyer_id: current_user.id).order('created_at DESC')
   end
 
   def display_lists
