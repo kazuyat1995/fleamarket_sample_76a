@@ -4,17 +4,18 @@
       = link_to "#", class:"container-link" do
         %figure#user-icon
           = image_tag "member_photo_noimage_thumb.png", size: "60x60", alt: "アイコン"
-        %h2.user-nickname
-          = current_user.nickname
-        .mypage-number
-          .mypage-number__table
-            評価
-            %span.mypage-number__table__score
-              0
-          .mypage-number__table-left
-            出品数
-            %span.mypage-number__table__score
-              0
+      %h2.user-nickname
+        = current_user.nickname
+      .mypage-number
+        .mypage-number__table
+          評価
+          %span.mypage-number__table-score
+            0
+        .mypage-number__table-left
+          出品数
+          %span.mypage-number__table-score
+            = link_to display_lists_user_path, class: "mypage-number__table-score__link" do
+              = @exhibits
     .mypage__main__info__tab
       %ul.mypage-tabs
         %li.mypage-tabs__body.mypage-tabs__body-active
