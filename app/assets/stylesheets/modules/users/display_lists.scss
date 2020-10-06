@@ -1,8 +1,8 @@
 .item__body {
   width: 100%;
   height: 100%;
-  padding-bottom: 100px;
-  overflow: scroll;
+  padding-bottom: 50px;
+  overflow-y: scroll;
   &__title {
     padding-top: 30px;
     color: #3ccace;
@@ -166,6 +166,7 @@
   }
   .none_lists {
     text-align: center;
+    // margin: 30px 0 400px 0;
     margin-top: 30px;
     font-size: 20px;
   }

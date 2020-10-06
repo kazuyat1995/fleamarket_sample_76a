@@ -3,7 +3,6 @@ class CardsController < ApplicationController
   before_action :move_to_root
   before_action :set_card, only: [:new, :show, :delete, :payment]
   before_action :set_payjp_key, only: [:new, :show, :delete, :payment]
-  before_action :set_item, only: [:payment]
 
   def new
     if @card.present?
@@ -32,6 +31,7 @@ class CardsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     if @card.present?
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_information = customer.cards.retrieve(@card.card_id)
@@ -70,6 +70,7 @@ class CardsController < ApplicationController
   end
 
   def payment
+    @item = Item.find(params[:id])
     if @card.present?
       customer = Payjp::Customer.retrieve(@card.customer_id)
       Payjp::Charge.create(
@@ -80,8 +81,8 @@ class CardsController < ApplicationController
       @item.update!(stock: 0)
       @item.update!(buyer_id: current_user.id)
     else
-      flash.now[:alert] = '支払い方法を登録してください'
-      render action: :new
+      flash[:notice] = '購入するには支払い方法の登録が必要です'
+      redirect_to action: :new
     end
   end
 
@@ -100,13 +101,4 @@ class CardsController < ApplicationController
   def set_payjp_key
     Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
   end
-
-  def set_customer
-    @customer = Payjp::Customer.retrieve(@card.customer_id)
-  end
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
 end

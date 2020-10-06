@@ -37,9 +37,9 @@ crumb :user_display_lists do
   parent :mypage
 end
 
-# 商品売却一覧
+# 商品購入履歴
 crumb :user_sold_lists do
-  link "商品売却一覧", sold_lists_user_path
+  link "商品購入履歴", sold_lists_user_path
   parent :mypage
 end
 

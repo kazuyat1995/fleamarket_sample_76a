@@ -5,12 +5,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    @exhibits = Item.where(seller_id: current_user.id).where(stock: 1).count
   end
 
   def edit
   end
 
   def sold_lists
+    @items = Item.includes(:images).where(buyer_id: current_user.id).order('created_at DESC')
   end
 
   def display_lists

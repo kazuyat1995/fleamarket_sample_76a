@@ -2,18 +2,17 @@
   height: 100%;
   width: 1020px;
   margin: 40px auto 0;
-  overflow: scroll;
   
   &__right {
     float: right;
     background-color: whitesmoke;
     width: 700px;
-    height: 200px;
+    height: 100%;
     position: relative;
 
     &__logout {
       position: absolute;
-      top: 50%;
+      top: 15%;
       left: 50%;
       transform: translateY(-50%) translateX(-50%);
 
