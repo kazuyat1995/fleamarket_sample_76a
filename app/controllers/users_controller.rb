@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @exhibits = Item.where(seller_id: current_user.id).where(stock: 1).count
   end
 
   def edit
