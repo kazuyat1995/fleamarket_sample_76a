@@ -16,7 +16,7 @@
             .list__price
               %ul
                 %li
-                  = item.price
+                  = item.price.to_s(:delimited)
                 %li.unit
                   円
               %p
