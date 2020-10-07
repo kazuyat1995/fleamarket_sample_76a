@@ -67,7 +67,7 @@
         %div
           ￥
         %div
-          = @item.price
+          = @item.price.to_s(:delimited)
         %div
           (税込)
     - if current_user.id == @item.seller_id
