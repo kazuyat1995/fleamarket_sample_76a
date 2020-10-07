@@ -38,11 +38,20 @@
           出品者
         .item-property__column2
           = @user.nickname
-      -# .item-property
-      -#   .item-property__column1
-      -#     カテゴリー
-      -#   .item-property__column2
-      -#     メンズ
+      .item-property
+        .item-property__column1
+          カテゴリー
+        .item-property__column2
+          %span
+            = @category_parent.name
+          %span
+            &#047;
+          %span
+            = @category_child.name
+          %span
+            &#047;
+          %span
+            = @category_grandchild.name
       .item-property
         .item-property__column1
           ブランド
