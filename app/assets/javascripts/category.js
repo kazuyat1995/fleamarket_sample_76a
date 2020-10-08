@@ -8,8 +8,8 @@ $(function(){
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div>
-                        <select id="child_category" class="category_form" name="item[category_id]">
-                          <option value="---" data-category="---">---</option>
+                        <select id="child_category" class="category_form" name="item[category_id]" required="true">
+                          <option value="" data-category="---">---</option>
                             ${insertHTML}
                         <select>
                       </div>`;
@@ -20,8 +20,8 @@ $(function(){
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div>
-                              <select id="grandchild_category" class="category_form" name="item[category_id]">
-                                <option value="---" data-category="---">---</option>
+                              <select id="grandchild_category" class="category_form" name="item[category_id]" required="true">
+                                <option value="" data-category="---">---</option>
                                 ${insertHTML}
                               </select>
                             </div>`;
@@ -32,8 +32,7 @@ $(function(){
   $('#parent_category').on('change', function(){
     var parent_category_id = document.getElementById
     ('parent_category').value; //選択された親カテゴリーの名前を取得
-    if (parent_category_id != "---"){ //親カテゴリーが初期値でないことを確認
-
+    if (parent_category_id != ""){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: '/items/get_category_children',
         type: 'GET',
