@@ -2,12 +2,12 @@
   .confirm-main__container
     .confirm-main__container--header
       - if current_user.id == @user.id
-        %h2.confirm-tytle
+        %h2.confirm-title
           削除内容の確認
         %p.confirm-text
           下記の商品内容でよろしければ、削除するを押してください。
       - else
-        %h2.confirm-tytle
+        %h2.confirm-title
           購入内容の確認
         %p.confirm-text
           下記の商品内容でよろしければ、購入するを押してください。
