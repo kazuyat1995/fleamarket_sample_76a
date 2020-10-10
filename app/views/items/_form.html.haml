@@ -58,9 +58,9 @@
             %div
               = f.collection_select :category_id, @category_parents, :id, :name, {selected: @category_parent.id}, {id: 'parent_category', class: "category_form", required: true}
             %div
-              = f.collection_select :category_id, @category_children, :id, :name, {prompt: "---"},{id: 'child_category', class: "category_form", required: true}
+              = f.collection_select :category_id, @category_children, :id, :name, {selected: @category_child.id},{id: 'child_category', class: "category_form", required: true}
             %div
-              = f.collection_select :category_id, @category_grandchildren, :id, :name, {prompt: "---"},{id: 'grandchild_category', class: "category_form", required: true}
+              = f.collection_select :category_id, @category_grandchildren, :id, :name, {selected: @category_grandchild.id},{id: 'grandchild_category', class: "category_form", required: true}
       .exhibit-brand
         .exhibit-brand__header
           .title
