@@ -60,7 +60,7 @@ $(function(){
   // 子カテゴリー選択後のイベント
   $('.exhibit-category__selects').on('change','#child_category',function(){
     var child_category_id = $('#child_category option:selected').val(); //選択された子カテゴリーのidを取得
-    if (child_category_id != "---"){ //子カテゴリーが初期値でないことを確認
+    if (child_category_id != ""){ //子カテゴリーが初期値でないことを確認
       $.ajax({
         url: '/items/get_category_grandchildren',
         type: 'GET',
