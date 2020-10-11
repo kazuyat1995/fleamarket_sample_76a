@@ -8,6 +8,19 @@
   &__container {
     width: 700px;
 
+    &--link {
+      height: 45px;
+      padding: 24px 0;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      .page-link {
+        color: #3CCACE;
+        font-size: 20px;
+      }
+    }
+
     &--product-box {
       background-color: white;
       padding: 20px 40px 40px 40px;
@@ -260,86 +273,74 @@
         }
       }
 
-      &--link {
-        height: 45px;
-        padding: 24px 0;
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: space-between;
-
-        .page-link {
-          color: #3CCACE;
-          font-size: 20px;
-        }
-      }
-
       &--related-product {
         height: 410px;
         padding: 24px 40px 40px;
       }
     }
   }
+}
 
-  .comment-block {
-    margin-bottom: 20px;
-    border-bottom: solid 1px #dedede;
-    // width: 600px;
+.comment-block {
+  margin-bottom: 20px;
+  border-bottom: solid 1px #dedede;
+  // width: 600px;
+}
+
+.comment-content {
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.comment-created_at {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.comment-nickname {
+  display: flex;
+}
+
+.comment-delete {
+  margin-left: 10px;
+
+  &__text {
+    text-decoration: none;
+    color: red;
   }
+}
 
-  .comment-content {
-    margin-bottom: 10px;
-    word-wrap: break-word;
-    white-space: pre-wrap;
+.comment-edit {
+  margin-left: 5px;
+
+  &__text {
+    text-decoration: none;
+    color: #3CCACE;
   }
+}
 
-  .comment-created_at {
-    font-size: 12px;
-    margin-bottom: 3px;
-  }
+.comment-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
-  .comment-nickname {
-    display: flex;
-  }
+.comment-btn {
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
+  height: 50px;
+  width: 60%;
+  color: white;
+  font-size: 18px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
 
-  .comment-delete {
-    margin-left: 10px;
-
-    &__text {
-      text-decoration: none;
-      color: red;
-    }
-  }
-
-  .comment-edit {
-    margin-left: 5px;
-
-    &__text {
-      text-decoration: none;
-      color: #3CCACE;
-    }
-  }
-
-  .comment-form {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .comment-btn {
-    background: #3CCACE;
-    border: 1px solid #3CCACE;
-    height: 50px;
-    width: 60%;
-    color: white;
-    font-size: 18px;
-    border-radius: 100px;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
-  }
-
-  .comment-body {
-    height: 193px;
-    width: 598px;
-  }
+.comment-body {
+  height: 193px;
+  width: 598px;
+}
