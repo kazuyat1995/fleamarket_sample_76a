@@ -45,7 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # if false
     if @item.update(update_item_params)
       redirect_to display_lists_user_path, flash: {notice: "商品情報の編集が完了しました"}
     else
