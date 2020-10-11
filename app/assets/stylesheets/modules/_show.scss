@@ -10,8 +10,7 @@
 
     &--product-box {
       background-color: white;
-      height: 1250px;
-      padding: 20px 40px 0 40px;
+      padding: 20px 40px 40px 40px;
       margin-bottom: 20px;
 
       .product-name {
@@ -109,6 +108,7 @@
         line-height: 1.5;
         font-size: 18px;
         margin-bottom: 30px;
+        white-space: pre-wrap;
       }
 
       .item-property {
@@ -226,116 +226,120 @@
 
       .comment-list {
         width: 600px;
-        padding-top: 15px;
+        <<<<<<< HEAD padding-top: 15px;
 
-        &__tytle {
-          font-size: 24px;
-          font-weight: bold;
-          text-align: center;
-          margin-bottom: 30px;
-        }
+        &__title {
+          =======height: 350px;
+          padding: 40px 0 0;
 
-        &__content {
-          &--items {
-            height: 20px;
-            display: flex;
-            margin-bottom: 20px;
+          &__title {
+            >>>>>>>origin font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+          }
 
-            .commenter {
-              font-size: 18px;
-              color: darkgray;
-              margin-right: 10px;
-            }
+          &__content {
+            &--items {
+              height: 20px;
+              display: flex;
+              margin-bottom: 20px;
 
-            .comment-text {
-              font-size: 18px;
-              color: black;
+              .commenter {
+                font-size: 18px;
+                color: darkgray;
+                margin-right: 10px;
+              }
+
+              .comment-text {
+                font-size: 18px;
+                color: black;
+              }
             }
           }
         }
       }
-    }
 
-    &--link {
-      height: 45px;
-      padding: 24px 0;
-      margin-bottom: 30px;
-      display: flex;
-      justify-content: space-between;
+      &--link {
+        height: 45px;
+        padding: 24px 0;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
 
-      .page-link {
-        color: #3CCACE;
-        font-size: 20px;
+        .page-link {
+          color: #3CCACE;
+          font-size: 20px;
+        }
+      }
+
+      &--related-product {
+        height: 410px;
+        padding: 24px 40px 40px;
       }
     }
+  }
 
-    &--related-product {
-      height: 410px;
-      padding: 24px 40px 40px;
+  .comment-block {
+    margin-bottom: 20px;
+    border-bottom: solid 1px #dedede;
+    // width: 600px;
+  }
+
+  .comment-content {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  .comment-created_at {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .comment-nickname {
+    display: flex;
+  }
+
+  .comment-delete {
+    margin-left: 10px;
+
+    &__text {
+      text-decoration: none;
+      color: red;
     }
   }
-}
 
-.comment-block {
-  margin-bottom: 20px;
-  border-bottom: solid 1px #dedede;
-  // width: 600px;
-}
+  .comment-edit {
+    margin-left: 5px;
 
-.comment-content {
-  margin-bottom: 10px;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-}
-
-.comment-created_at {
-  font-size: 12px;
-  margin-bottom: 3px;
-}
-
-.comment-nickname {
-  display: flex;
-}
-
-.comment-delete {
-  margin-left: 10px;
-
-  &__text {
-    text-decoration: none;
-    color: red;
+    &__text {
+      text-decoration: none;
+      color: #3CCACE;
+    }
   }
-}
 
-.comment-edit {
-  margin-left: 5px;
-
-  &__text {
-    text-decoration: none;
-    color: #3CCACE;
+  .comment-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
-}
 
-.comment-form {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
+  .comment-btn {
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    height: 50px;
+    width: 60%;
+    color: white;
+    font-size: 18px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
 
-.comment-btn {
-  background: #3CCACE;
-  border: 1px solid #3CCACE;
-  height: 50px;
-  width: 60%;
-  color: white;
-  font-size: 18px;
-  border-radius: 100px;
-  text-align: center;
-  line-height: 50px;
-  cursor: pointer;
-}
-
-.comment-body {
-  height: 193px;
-  width: 598px;
-}
+  .comment-body {
+    height: 193px;
+    width: 598px;
+  }

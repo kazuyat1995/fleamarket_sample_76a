@@ -22,6 +22,9 @@ class UsersController < ApplicationController
   def confirm_deletion
     @item = Item.find(params[:id])
     @user = @item.seller
+    @category_grandchild = Category.find(@item.category_id)
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_grandchild.root
   end
 
   def confirm_edit

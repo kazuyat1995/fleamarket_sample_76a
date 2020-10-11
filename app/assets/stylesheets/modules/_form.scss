@@ -1,5 +1,5 @@
-// tytle・required-mark・select-boxは供用
-.tytle {
+// title・required-mark・select-boxは供用
+.title {
   font-size: 20px;
   font-weight: bolder;
 }
@@ -116,6 +116,11 @@
       &__header {
         margin: 10px 0 5px 0;
         display: flex;
+      }
+      .category_form {
+        height: 40px;
+        width: 100%;
+        margin-bottom: 5px;
       }
     }
     // ブランド
