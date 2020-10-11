@@ -10,12 +10,24 @@ class CommentsController < ApplicationController
     end
   end
 
-
-
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to item_path(@comment.item.id)
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to item_path(@comment.item.id)
+    else
+      flash[:notice] = 'メッセージの送信に失敗しました'
+      redirect_to edit_comment_path(@comment)
+    end
   end
 
   private

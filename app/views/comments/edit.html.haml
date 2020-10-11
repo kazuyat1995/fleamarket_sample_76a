@@ -1,0 +1,16 @@
+= render 'items/header'
+
+.detail-main
+  .detail-main__container
+    .detail-main__container--comment-box
+      .comment-form
+        = form_with url: comment_path, id: "new-comment", method: :PUT, model: @comment do |f|
+          = f.text_area :comment, class: "comment-body", id: "comment-body"
+          %p.attention-text
+            相手のことを考えた丁寧名コメントを心がけましょう。
+          %p.attention-text
+            不快な言葉遣いなどは利用制限や退会処分になることがあります。
+          .post
+            = f.submit "コメントする", class: "comment-btn"
+
+= render 'items/footer'

@@ -107,7 +107,7 @@
                       .comment-delete__text
                         削除
                   .comment-edit
-                    = link_to "#" do
+                    = link_to edit_comment_path(comment.id) do
                       .comment-edit__text
                         編集
                 - else 
