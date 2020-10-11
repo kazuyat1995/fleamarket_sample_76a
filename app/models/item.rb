@@ -29,4 +29,13 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User"
   
   accepts_nested_attributes_for :images, allow_destroy: true
+  validates :name, presence: true
+  validates :detail, presence: true
+  validates :category_id, presence: true
+  validates :condition, presence: true
+  validates :postage, presence: true
+  validates :area, presence: true
+  validates :until_shipping, presence: true
+  validates :price, presence: true
+  validates :seller_id, presence: true
 end
