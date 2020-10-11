@@ -8,7 +8,7 @@ $(function(){
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div>
-                        <select id="child_category" class="category_form" name="item[category_id]" required="true">
+                        <select id="child_category" class="category_form" name="item[child_id]" required="true">
                           <option value="" data-category="---">---</option>
                             ${insertHTML}
                         <select>

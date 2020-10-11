@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :confirm, :edit, :update, :destroy]
-  before_action :set_category_parents, only: [:new, :edit]
-  before_action :set_category, only: [:edit, :show, :confirm]
+  before_action :set_category_parents, only: [:new, :create]
+  before_action :set_category, only: [:edit, :update, :show, :confirm]
   before_action :set_seller, only: [:show, :confirm]
 
   def index
@@ -25,8 +25,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category_children = @category_grandchild.parent.parent.children
-    @category_grandchildren = @category_grandchild.parent.children
   end
 
   def get_category_children
@@ -75,6 +73,10 @@ class ItemsController < ApplicationController
       @category_grandchild = Category.find(@item.category_id)
       @category_child = @category_grandchild.parent
       @category_parent = @category_grandchild.root
+      
+      @category_grandchildren = @category_grandchild.parent.children
+      @category_children = @category_grandchild.parent.parent.children
+      @category_parents = Category.where(ancestry: nil)
     end
 
     def set_seller
