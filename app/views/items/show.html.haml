@@ -94,25 +94,48 @@
           %h1
             ※ 商品購入にはログインが必要です
 
-          
+
     .detail-main__container--comment-box
-      %textarea{placeholder: "コメントする", class: "comment-area"}
-      %p.attention-text
-        相手のことを考えた丁寧名コメントを心がけましょう。
-      %p.attention-text
-        不快な言葉遣いなどは利用制限や退会処分になることがあります。
-      .post
-        = link_to "#", class: "post__comment-btn" do
-          コメントする
       .comment-list
-        .comment-list__title
-          コメント一覧
-        .comment-list__content
-          .comment-list__content--items
-            .commenter
-              テストユーザー
-            .comment-text
-              こんにちわ
+        - if user_signed_in?
+          - @comments.each do |comment| 
+            .comment-block{data:{index: comment.id}}
+              .comment-content
+                = comment.comment
+              .comment-created_at
+                = icon("far fa-clock", class: "time-icon")
+                = time_ago_in_words(comment.created_at) + "前"
+              .comment-nickname
+                = comment.user.nickname
+                - if comment.user ==  comment.item.seller  # コメントユーザーと出品者が同じ場合
+                  .comment-nickname__seller
+                    (出品者)
+                - if comment.user_id == current_user.id  
+                  .comment-delete{data:{index: comment.id}}     
+                    = link_to comment_path(comment.id), method: :DELETE, id: "delete" do
+                      .comment-delete__text
+                        削除
+                  .comment-edit
+                    = link_to edit_comment_path(comment.id) do
+                      .comment-edit__text
+                        編集
+                - else 
+                  - if comment.item.seller_id == current_user.id
+                    .comment-delete.inappropriate{data:{index: comment.id}}     
+                      = link_to comment_path(comment.id), method: :DELETE, id: "delete" do
+                        .comment-delete__text
+                          削除
+      .comment-form
+        = form_with model: @comment, id: "new-comment" do |f|
+          = f.text_area :comment, class: "comment-body", id: "comment-body"
+          = f.hidden_field :item_id, value: @item.id
+          %p.attention-text
+            相手のことを考えた丁寧名コメントを心がけましょう。
+          %p.attention-text
+            不快な言葉遣いなどは利用制限や退会処分になることがあります。
+          .post
+            = f.submit "コメントする", class: "comment-btn"
+
     .detail-main__container--link
       = link_to "#", class: "page-link" do
         < 前の商品

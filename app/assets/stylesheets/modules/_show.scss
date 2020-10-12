@@ -4,61 +4,85 @@
   padding-top: 35px;
   display: flex;
   justify-content: center;
+
   &__container {
     width: 700px;
+
+    &--link {
+      height: 45px;
+      padding: 24px 0;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      .page-link {
+        color: #3CCACE;
+        font-size: 20px;
+      }
+    }
+
     &--product-box {
       background-color: white;
       padding: 20px 40px 40px 40px;
       margin-bottom: 20px;
+
       .product-name {
         font-size: 24px;
         font-weight: bold;
         text-align: center;
       }
+
       .product-image {
         margin: 16px 0 30px 0;
         padding-left: 35px;
-        
+
         &__top {
           display: inline-block;
           position: relative;
+
           .img {
             height: 360px;
             width: 560px;
-            &__sold{
+
+            &__sold {
               width: 0;
               height: 0;
               border-top: 52px solid red;
               border-right: 50px solid transparent;
               border-bottom: 50px solid transparent;
               border-left: 50px solid red;
-              z-index:1;
+              z-index: 1;
               position: absolute;
               top: 0px;
               left: 0px;
-              &__inner{
+
+              &__inner {
                 color: #fff;
                 transform: rotate(-45deg);
                 font-size: 20px;
-                margin:-16px 6px 0px -39px;
+                margin: -16px 6px 0px -39px;
                 letter-spacing: 6px;
                 font-weight: bold;
               }
             }
           }
         }
+
         &__bottom {
           height: 90px;
           width: 560px;
+
           .bottom-image {
             width: 100%;
             display: flex;
             justify-content: center;
-            &__list{
+
+            &__list {
               height: 100px;
               width: 24%;
               margin-right: 1px;
-              img{
+
+              img {
                 height: 100px;
                 width: 133px;
                 object-fit: cover;
@@ -68,35 +92,43 @@
         }
 
       }
+
       .price-box {
         text-align: center;
         margin-bottom: 30px;
+
         &__item-price {
           font-size: 46px;
           font-weight: bold;
           font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
         }
+
         &__item-fee {
           display: flex;
           justify-content: center;
+
           &__item-tax {
             font-size: 16px;
           }
+
           &__image-postage {
             font-size: 16px;
           }
         }
       }
+
       .item-detail {
         line-height: 1.5;
         font-size: 18px;
         margin-bottom: 30px;
         white-space: pre-wrap;
       }
+
       .item-property {
         display: table;
         width: 100%;
         border: 1px solid #dedede;
+
         &__column1 {
           display: table-cell;
           background-color: #eee;
@@ -106,6 +138,7 @@
           font-size: 14px;
           text-align: center;
         }
+
         &__column2 {
           display: table-cell;
           background-color: white;
@@ -115,11 +148,14 @@
           font-size: 14px;
         }
       }
+
       .purchase {
         width: 100%;
         margin-top: 40px;
+
         // padding-left: 180px;
-        &__buy-btn, &__sold {
+        &__buy-btn,
+        &__sold {
           display: block;
           text-align: center;
           width: 300px;
@@ -129,9 +165,11 @@
           background-color: #3ccace;
           margin-left: 160px;
         }
+
         &__sold {
           background-color: red;
         }
+
         &__edit {
           background-color: #3ccace;
           line-height: 50px;
@@ -143,9 +181,10 @@
           font-size: 18px;
           margin-left: 180px;
         }
-        &__delete{
+
+        &__delete {
           margin-top: 20px;
-          background-color:#FF3366;
+          background-color: #FF3366;
           line-height: 50px;
           width: 250px;
           display: block;
@@ -155,7 +194,8 @@
           font-size: 18px;
           margin-left: 180px;
         }
-        h1{
+
+        h1 {
           color: red;
           margin-top: 90px;
           font-size: 22px;
@@ -163,23 +203,27 @@
         }
       }
     }
+
     &--comment-box {
       background-color: white;
-      height: 800px;
       width: 100%;
       padding: 24px 40px 40px;
+
       .comment-area {
         height: 100px;
         width: 100%;
       }
+
       .attention-text {
         font-size: 14px;
       }
+
       .post {
         display: flex;
         justify-content: center;
         margin-top: 30px;
         margin-bottom: 30px;
+
         &__comment-btn {
           background: #3CCACE;
           border: 1px solid #3CCACE;
@@ -192,48 +236,111 @@
           line-height: 50px;
         }
       }
+
       .comment-list {
         width: 600px;
-        height: 350px;
-        padding: 40px 0 0;
+        padding-top: 15px;
+
         &__title {
-          font-size: 24px;
-          font-weight: bold;
-          text-align: center;
-          margin-bottom: 30px;
-        }
-        &__content {
-          &--items {
-            height: 20px;
-            display: flex;
-            margin-bottom: 20px;
-            .commenter {
-              font-size: 18px;
-              color: darkgray;
-              margin-right: 10px;
-            }
-            .comment-text {
-              font-size: 18px;
-              color: black;
+          height: 350px;
+          padding: 40px 0 0;
+
+          &__title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+
+          &__content {
+            &--items {
+              height: 20px;
+              display: flex;
+              margin-bottom: 20px;
+
+              .commenter {
+                font-size: 18px;
+                color: darkgray;
+                margin-right: 10px;
+              }
+
+              .comment-text {
+                font-size: 18px;
+                color: black;
+              }
             }
           }
         }
       }
-    }
-    &--link {
-      height: 45px;
-      padding: 24px 0;
-      margin-bottom: 30px;
-      display: flex;
-      justify-content: space-between;
-      .page-link {
-        color: #3CCACE;
-        font-size: 20px;
+
+      &--related-product {
+        height: 410px;
+        padding: 24px 40px 40px;
       }
     }
-    &--related-product {
-      height: 410px;
-      padding: 24px 40px 40px;
-    }
   }
+}
+
+.comment-block {
+  margin-bottom: 20px;
+  border-bottom: solid 1px #dedede;
+  // width: 600px;
+}
+
+.comment-content {
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.comment-created_at {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.comment-nickname {
+  display: flex;
+}
+
+.comment-delete {
+  margin-left: 10px;
+
+  &__text {
+    text-decoration: none;
+    color: red;
+  }
+}
+
+.comment-edit {
+  margin-left: 5px;
+
+  &__text {
+    text-decoration: none;
+    color: #3CCACE;
+  }
+}
+
+.comment-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.comment-btn {
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
+  height: 50px;
+  width: 60%;
+  color: white;
+  font-size: 18px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.comment-body {
+  height: 193px;
+  width: 598px;
 }

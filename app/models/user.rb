@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_one :address, dependent: :destroy
   has_one :profile, dependent: :destroy
   has_many :items
+  has_many :comments, dependent: :destroy
 
   with_options presence: true do
     validates :nickname, presence: true, uniqueness: true
