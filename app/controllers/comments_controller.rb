@@ -12,8 +12,12 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-    redirect_to item_path(@comment.item.id)
+    if @comment.destroy
+      redirect_to item_path(@comment.item.id)
+    else
+      flash[:notice] = 'このコメントは削除できません'
+      redirect_to item_path(@comment.item.id)
+    end
   end
 
   def edit
@@ -34,5 +38,4 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:comment,:item_id).merge(user_id: current_user.id)
     end
-
 end
