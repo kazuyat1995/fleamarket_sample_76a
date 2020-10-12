@@ -1,0 +1,5 @@
+errors:
+  format: "%{attribute}%{message}"
+  messages:
+    accepted: を受諾してください
+    blank: を入力してください
