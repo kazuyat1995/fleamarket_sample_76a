@@ -1,3 +1,8 @@
+errors:
+  format: "%{attribute}%{message}"
+  messages:
+    accepted: を受諾してください
+    blank: を入力してください
 ja:
   datetime:
     distance_in_words:
