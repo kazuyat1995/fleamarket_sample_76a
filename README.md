@@ -1,29 +1,53 @@
 アプリケーション情報
- アプリケーション概要
-  接続先情報
-   URL http://54.248.166.171/
+
+ 　アプリケーション概要
+ 
+  　　接続先情報
+  
+   　　　URL http://54.248.166.171/
    
-   ID/Pass
+  　　　 ID/Pass
    
-   ID: tech76a
+  　　　 ID: tech76a
    
-   Pass: fms76a
+ 　　　  Pass: fms76a
    
  テスト用アカウント等
-  購入者用
-   メールアドレス: buyer@test.com
-   パスワード: buy0000
+ 
+  　　購入者用
+  
+   　　　メールアドレス: buyer@test.com
    
-  購入用カード情報
-   番号： 4242424242424242
-   期限： 12/2030
-   セキュリティコード：123
+   　　　パスワード: buy0000
    
-  出品者用
-   メールアドレス名: seller@test.com
-   パスワード: sell0000
+  　　購入用カード情報
+    
+  　　　 番号： 4242424242424242
+      
+  　　　 期限： 12/2030
+      
+  　　　 セキュリティコード：123
+   
+  　　出品者用
+    
+   　　　メールアドレス名: seller@test.com
+      
+  　　　 パスワード: sell0000
+      
+  開発状況
+  
+       開発環境
+       
+        Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
+        
+       開発体制
+       
+        人数：3人
+        
+        アジャイル型開発（スクラム）
 
 
+      
 
 ![ER図](https://user-images.githubusercontent.com/66255429/92296867-3f920380-ef74-11ea-9401-ac388369368e.png)
 
