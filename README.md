@@ -8,9 +8,9 @@
    
   　　　 ID/Pass
    
-  　　　 ID: tech76a
+  　　　  ID: tech76a
    
- 　　　  Pass: fms76a
+ 　　　   Pass: fms76a
    
  テスト用アカウント等
  
